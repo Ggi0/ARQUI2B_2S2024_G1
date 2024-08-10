@@ -5,20 +5,20 @@ import processing.serial.*;
 
 Serial puertoArduino;
 
-/*
-sensores = [
-  ["HUMEDAD", "90"],
-  ["CO2", "99"],
-  ["TEMPERATURA", "99"],
-  ["DISTANCIA", "99"],
-  ["LUZ", "99"]
-]
-*/
-ArrayList<String[]> sensores = new ArrayList<String[]>();
-
 Humedad panelHumedad;
 
-float porcentajeHumedad = 0;
+/*
+sensores = {
+  "HUMEDAD": "90",
+  "CO2": "99",
+  "TEMPERATURA": "99",
+  "DISTANCIA": "99",
+  "LUZ": "99"
+}
+*/
+FloatDict sensores = new FloatDict();
+
+ArrayList<FloatDict> valoresEEPROM = new ArrayList<FloatDict>();
 
 void setup() {
   size(1280, 960, P2D);
@@ -26,48 +26,58 @@ void setup() {
   puertoArduino = new Serial(this, Serial.list()[0], 9600);
   puertoArduino.bufferUntil('$');
   
+  inicializarSensores();
+  
+  rectMode(CENTER);
   panelHumedad = new Humedad();
 }
 
 void draw() {
   background(255);
-  panelHumedad.drawHumedad(porcentajeHumedad);
+  fill(200);
+  rect(width/4, height/4, panelHumedad.getWidth(), panelHumedad.getHeight(), 28);
+  
+  panelHumedad.drawHumedad(sensores.get("HUMEDAD"));
+  panelHumedad.drawHumedad(sensores.get("HUMEDAD"));
+  panelHumedad.drawHumedad(sensores.get("HUMEDAD"));
+  panelHumedad.drawHumedad(sensores.get("HUMEDAD"));
+  panelHumedad.drawHumedad(sensores.get("HUMEDAD"));
+  
   
   // Cada 20 frames, solicitar nueva información de Arduino
   // Utilización de hilos para no ralentizar el render de los marcos
-  if (frameCount % 200 == 0) {
-    thread("updateHumedad");
+  if (frameCount % 10 == 0) {
+    //sensores.add("HUMEDAD", 1);
+    //sensores.set("HUMEDAD", sensores.get("HUMEDAD")%100);
   }
-}
-
-void updateHumedad() {
-  //porcentajeHumedad += 1;
-  //porcentajeHumedad %= 100;
-  porcentajeHumedad = random(0, 100);
 }
 
 void serialEvent(Serial p){
   // puertoArduino puede ser sustituido por el objeto Serial "p"
   String datosArduino = puertoArduino.readString();
+  
+  println("================== Datos recibidos de Arduino ==================");
   println(datosArduino);
   
   // Si viene '#' al inicio, son Serial.println's basura
   if (datosArduino.charAt(0) == '#'){
-    println("Serial.println's de Arduino ignorados");
+    println("> Datos de Arduino ignorados");
     return;
   }
   
   // Si viene '%' al inicio, guardar el histórico de valores almacenados en la EEPROM
   if (datosArduino.charAt(0) == '%'){
-    println("GUARDAR DATOS DE LA EEPROM");
+    valoresEEPROM.add(sensores);
+    println("=========== Datos de sensores guardados en la EEPROM ==========");
+    println(valoresEEPROM);
     return;
   }
   
   // Si entra a este flujo, actualizar valores de sensores en tiempo real
   
-  String[] datosSensores = splitTokens(datosArduino, "\n");
+  inicializarSensores();
   
-  sensores.clear();
+  String[] datosSensores = splitTokens(datosArduino, "\n");
   
   for (int i = 0; i < datosSensores.length; i++){
     String[] datoSensor = splitTokens(datosSensores[i], "/");
@@ -77,12 +87,18 @@ void serialEvent(Serial p){
       if(datoSensor[1].charAt(datoSensor[1].length() - 1) == '$'){   
         datoSensor[1] = datoSensor[1].substring(0, datoSensor[1].length() - 1);
       }
-      sensores.add(datoSensor);
+      sensores.set(datoSensor[0], float(datoSensor[1]));
     }
   }
   
-  println("========= Datos guardados en el ArrayList =========");
-  for (int i = 0; i < sensores.size(); i++){
-     println(sensores.get(i));
-  }
+  println("=============== Datos de sensores actualizados ================");
+  println(sensores);
+}
+
+void inicializarSensores(){
+  sensores.set("HUMEDAD", 0.0);
+  sensores.set("CO2",0.0);
+  sensores.set("TEMPERATURA",0.0);
+  sensores.set("DISTANCIA",0.0);
+  sensores.set("LUZ",0.0);
 }

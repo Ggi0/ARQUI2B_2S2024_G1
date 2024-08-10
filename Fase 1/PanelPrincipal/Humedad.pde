@@ -6,8 +6,8 @@ class Humedad {
   
   Humedad(){
     // Ancho y alto de panel calculado para dejar espacio para 4 marcos en pantalla
-    widthPanelH = width / 2 - 10;
-    heightPanelH = height / 2 - 5;
+    widthPanelH = width / 2 - 50;
+    heightPanelH = height / 2 - 30;
     
     for (int i = 0; i < particles.length; i++){
       particles[i] = new ParticleSystem(new PVector(widthPanelH * i / 5, 0), porcentajeHumedad, i);
@@ -15,12 +15,12 @@ class Humedad {
     
     f = createFont("Arial", 40);
     textFont(f);
-    
-    rectMode(CENTER);
     textAlign(CENTER);
   }
+  
+  void arrancarHiloHumedad()
 
-  void drawHumedad(float nuevoPorcentHumedad){
+  void drawHumedad(float nuevoPorcentHumedad){    
     porcentajeHumedad = nuevoPorcentHumedad;
     
     // Actualizando particulas
@@ -39,5 +39,13 @@ class Humedad {
     
     fill(255);
     text("Porcentaje de Humedad: " + round(porcentajeHumedad) + "%", widthPanelH/2, heightPanelH/2);
+  }
+  
+  int getWidth() {
+    return widthPanelH;
+  }
+  
+  int getHeight() {
+    return heightPanelH;
   }
 }

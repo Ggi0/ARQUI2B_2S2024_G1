@@ -7,10 +7,12 @@
 
 int ldrPin = A0;       // Pin analógico donde está conectado el LDR
 int mq135Pin = A1;     // Pin analógico al que está conectado la salida del MQ-135
+
 int ldrValue = 0;      // Variable para almacenar el valor del LDR
 int mq135Value = 0;    // Variable para almacenar el valor del MQ-135
 float humedad = 0;     // Variable para almacenar el valor de la humedad
 float temperatura = 0; // Variable para almacenar el valor de la temperatura
+int distanceCm = 0;    // Variable para almacenar la distancia en Cm
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -28,7 +30,6 @@ int eepromAddress = 0;
 const int trigPin = 9;
 const int echoPin = 10;
 long duration;
-int distanceCm = 0;
 
 // Funciones de interrupción para cada botón
 void button1ISR() { buttonPressed[0] = true; }
@@ -166,12 +167,6 @@ void sendSensorReadingsToProcessing() {
 }
 
 void showSensorReadings() {
-  // Lee la humedad
-  //float humedad = dht.readHumidity();
-
-  // Lee la temperatura en grados Celsius (por defecto)
-  //float temperatura = dht.readTemperature();
-
   // Comprueba si alguna lectura ha fallado
   if (isnan(humedad) || isnan(temperatura)) {
     Serial.println("Error al leer del sensor DHT11");
@@ -185,40 +180,20 @@ void showSensorReadings() {
     Serial.println(" °C");
   }
 
-  // Lee el valor del sensor de luminosidad (LDR)
-  //ldrValue = analogRead(ldrPin);
-
   // Imprime el valor de la luminosidad en la consola serie
   Serial.print("Luminosidad: ");
   Serial.println(ldrValue);
-
-  // Lee el valor del sensor MQ-135
-  //mq135Value = analogRead(mq135Pin);
 
   // Imprime el valor del sensor MQ-135 en la consola serie
   Serial.print("Valor del sensor MQ-135: ");
   Serial.println(mq135Value);
 
-  // Lógica para el sensor HC-SR04
-  //digitalWrite(trigPin, LOW);
-  //delayMicroseconds(2);
-  //digitalWrite(trigPin, HIGH);
-  //delayMicroseconds(10);
-  //digitalWrite(trigPin, LOW);
-  //duration = pulseIn(echoPin, HIGH);
-  //distanceCm = duration * 0.034 / 2;
   Serial.print("Distancia: ");
   Serial.print(distanceCm);
   Serial.println(" cm");
 }
 
 void saveDataToEEPROM() {
-  // Lee las lecturas actuales de los sensores
-  //float humedad = dht.readHumidity();
-  //float temperatura = dht.readTemperature();
-  //int ldrValue = analogRead(ldrPin);
-  //int mq135Value = analogRead(mq135Pin);
-
   // Guarda los datos en la EEPROM
   EEPROM.put(eepromAddress, humedad);
   eepromAddress += sizeof(humedad);
