@@ -26,7 +26,7 @@ class Humedad {
     // Actualizando particulas
     for (int i = 0; i < particles.length; i++){
       particles[i].addParticle(porcentajeHumedad, widthPanelH);
-      particles[i].run();
+      particles[i].run(nuevoPorcentHumedad);
     }
     
     //Text

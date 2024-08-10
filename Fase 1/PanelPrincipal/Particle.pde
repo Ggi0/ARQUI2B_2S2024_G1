@@ -37,9 +37,9 @@ class Particle {
   void display() {
     stroke(255, lifespan);
     
-    if ( factor >= maxAcceleration * 5 / 6) {
+    if ( factor >= maxAcceleration * 5 / 6) {         // a partir del 83% de humedad
       blue = #1460D8;
-    } else if (factor >= maxAcceleration * 3 / 6) {
+    } else if (factor >= maxAcceleration * 3 / 6) {   // a partir de 50% de humedad
         blue = #75A0E3;
     } else {
         blue = #9CC0FC;

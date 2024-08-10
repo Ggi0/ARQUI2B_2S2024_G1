@@ -18,11 +18,11 @@ class ParticleSystem {
     particles.add(new Particle(origin, factor, maxAcceleration, widthPanelH));
   }
 
-  void run() {
+  void run(float nuevoPorcentHumedad) {
     for (int i = particles.size()-1; i >= 0; i--) {
       Particle p = particles.get(i);
       p.run();
-      if (p.isDead()) {
+      if (p.isDead() || nuevoPorcentHumedad == 0) {
         particles.remove(i);
       }
     }
