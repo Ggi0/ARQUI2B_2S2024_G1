@@ -1,14 +1,16 @@
 #include <EEPROM.h>
 #include "DHT.h"
 
-#define DHTPIN 4      // Pin al que está conectado el pin de datos del DHT11
-#define DHTTYPE DHT11 // DHT 11
-#define LED_PIN 13    // Pin al que está conectado el LED
+#define DHTPIN 4       // Pin al que está conectado el pin de datos del DHT11
+#define DHTTYPE DHT11  // DHT 11
+#define LED_PIN 13     // Pin al que está conectado el LED
 
-int ldrPin = A0;      // Pin analógico donde está conectado el LDR
-int mq135Pin = A1;    // Pin analógico al que está conectado la salida del MQ-135
-int ldrValue = 0;     // Variable para almacenar el valor del LDR
-int mq135Value = 0;   // Variable para almacenar el valor del MQ-135
+int ldrPin = A0;       // Pin analógico donde está conectado el LDR
+int mq135Pin = A1;     // Pin analógico al que está conectado la salida del MQ-135
+int ldrValue = 0;      // Variable para almacenar el valor del LDR
+int mq135Value = 0;    // Variable para almacenar el valor del MQ-135
+float humedad = 0;     // Variable para almacenar el valor de la humedad
+float temperatura = 0; // Variable para almacenar el valor de la temperatura
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -53,6 +55,14 @@ void setup() {
 }
 
 void loop() {
+  // Enviando los valores de los sensores a Processing
+  sendSensorReadingsToProcessing();
+  // Caracter "trigger" que arranca serialEvent() de Processing
+  Serial.print("$");
+
+  // Caracter para que Processing ignore cualquier Serial.print
+  Serial.println("#");
+
   // Verificar si el botón 1 fue presionado
   if (buttonPressed[0]) {
     buttonPressed[0] = false; // Resetear la bandera
@@ -63,8 +73,19 @@ void loop() {
   // Verificar si el botón 2 fue presionado
   if (buttonPressed[1]) {
     buttonPressed[1] = false; // Resetear la bandera
+
+    // Caracter "trigger" que arranca serialEvent() de Processing
+    Serial.print("$");
+    // Caracter para que Processing guarde valores de EEPROM en memoria
+    Serial.println("%");
+
     // Guardar los datos en la EEPROM
     saveDataToEEPROM();
+
+    // Caracter "trigger" que arranca serialEvent() de Processing
+    Serial.print("$");
+    // Caracter para que Processing ignore cualquier Serial.print
+    Serial.println("#");
   }
 
   // Verificar si el botón 3 fue presionado
@@ -86,14 +107,48 @@ void loop() {
   delay(1000); // Enciende el LED por 1 segundo
   digitalWrite(LED_PIN, LOW);
   delay(1000); // Apaga el LED por 1 segundo
+
+  // Caracter "trigger" que arranca serialEvent() de Processing
+  Serial.println("$");
+}
+
+void sendSensorReadingsToProcessing() {
+  // Lee la humedad
+  humedad = dht.readHumidity();
+
+  // Lee la temperatura en grados Celsius (por defecto)
+  temperatura = dht.readTemperature();
+
+  if (!isnan(humedad)){
+    Serial.print("HUMEDAD/");
+    Serial.println(humedad);
+  }
+  if (!isnan(temperatura)){
+    Serial.print("TEMPERATURA/");
+    Serial.println(temperatura);
+  }
+
+  // Lee el valor del sensor de luminosidad (LDR)
+  ldrValue = analogRead(ldrPin);
+
+  // Imprime el valor de la luminosidad en la consola serie
+  Serial.print("LUZ/");
+  Serial.println(ldrValue);
+
+  // Lee el valor del sensor MQ-135
+  mq135Value = analogRead(mq135Pin);
+
+  // Imprime el valor del sensor MQ-135 en la consola serie
+  Serial.print("CO2/");
+  Serial.println(mq135Value);
 }
 
 void showSensorReadings() {
   // Lee la humedad
-  float humedad = dht.readHumidity();
+  //float humedad = dht.readHumidity();
 
   // Lee la temperatura en grados Celsius (por defecto)
-  float temperatura = dht.readTemperature();
+  //float temperatura = dht.readTemperature();
 
   // Comprueba si alguna lectura ha fallado
   if (isnan(humedad) || isnan(temperatura)) {
@@ -109,14 +164,14 @@ void showSensorReadings() {
   }
 
   // Lee el valor del sensor de luminosidad (LDR)
-  ldrValue = analogRead(ldrPin);
+  //ldrValue = analogRead(ldrPin);
 
   // Imprime el valor de la luminosidad en la consola serie
   Serial.print("Luminosidad: ");
   Serial.println(ldrValue);
 
   // Lee el valor del sensor MQ-135
-  mq135Value = analogRead(mq135Pin);
+  //mq135Value = analogRead(mq135Pin);
 
   // Imprime el valor del sensor MQ-135 en la consola serie
   Serial.print("Valor del sensor MQ-135: ");
@@ -125,10 +180,10 @@ void showSensorReadings() {
 
 void saveDataToEEPROM() {
   // Lee las lecturas actuales de los sensores
-  float humedad = dht.readHumidity();
-  float temperatura = dht.readTemperature();
-  int ldrValue = analogRead(ldrPin);
-  int mq135Value = analogRead(mq135Pin);
+  //float humedad = dht.readHumidity();
+  //float temperatura = dht.readTemperature();
+  //int ldrValue = analogRead(ldrPin);
+  //int mq135Value = analogRead(mq135Pin);
 
   // Guarda los datos en la EEPROM
   EEPROM.put(eepromAddress, humedad);
