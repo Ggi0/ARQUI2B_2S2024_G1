@@ -23,6 +23,13 @@ volatile bool buttonPressed[4] = {false, false, false, false};
 // Dirección de memoria EEPROM para almacenar los datos
 int eepromAddress = 0;
 
+// variables para los pines trigPin y echoPin, 
+//así como para almacenar la duración y la distancia calculada.
+const int trigPin = 9;
+const int echoPin = 10;
+long duration;
+int distanceCm = 0;
+
 // Funciones de interrupción para cada botón
 void button1ISR() { buttonPressed[0] = true; }
 void button2ISR() { buttonPressed[1] = true; }
@@ -50,6 +57,10 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(buttonPins[1]), button2ISR, FALLING);
   attachInterrupt(digitalPinToInterrupt(buttonPins[2]), button3ISR, FALLING);
   attachInterrupt(digitalPinToInterrupt(buttonPins[3]), button4ISR, FALLING);
+
+  // Configuración del sensor ultrasónico
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
 
   Serial.println("DHT11, LDR, MQ-135, y teclado de membrana 1x4 con EEPROM");
 }
@@ -141,6 +152,17 @@ void sendSensorReadingsToProcessing() {
   // Imprime el valor del sensor MQ-135 en la consola serie
   Serial.print("CO2/");
   Serial.println(mq135Value);
+
+  // Lógica para el sensor HC-SR04
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distanceCm = duration * 0.034 / 2;
+  Serial.print("DISTANCIA/");
+  Serial.println(distanceCm);
 }
 
 void showSensorReadings() {
@@ -176,6 +198,18 @@ void showSensorReadings() {
   // Imprime el valor del sensor MQ-135 en la consola serie
   Serial.print("Valor del sensor MQ-135: ");
   Serial.println(mq135Value);
+
+  // Lógica para el sensor HC-SR04
+  //digitalWrite(trigPin, LOW);
+  //delayMicroseconds(2);
+  //digitalWrite(trigPin, HIGH);
+  //delayMicroseconds(10);
+  //digitalWrite(trigPin, LOW);
+  //duration = pulseIn(echoPin, HIGH);
+  //distanceCm = duration * 0.034 / 2;
+  Serial.print("Distancia: ");
+  Serial.print(distanceCm);
+  Serial.println(" cm");
 }
 
 void saveDataToEEPROM() {
@@ -194,6 +228,8 @@ void saveDataToEEPROM() {
   eepromAddress += sizeof(ldrValue);
   EEPROM.put(eepromAddress, mq135Value);
   eepromAddress += sizeof(mq135Value);
+  EEPROM.put(eepromAddress, distanceCm); // Guardar la distancia
+  eepromAddress += sizeof(distanceCm);
 
   Serial.println("Datos guardados en la EEPROM");
 }
@@ -204,9 +240,10 @@ void readLastDataFromEEPROM() {
   float temperatura;
   int ldrValue;
   int mq135Value;
+  int distanceCm;
 
   // Dirección de memoria de lectura (la última dirección usada)
-  int address = eepromAddress - (sizeof(humedad) + sizeof(temperatura) + sizeof(ldrValue) + sizeof(mq135Value));
+  int address = eepromAddress - (sizeof(humedad) + sizeof(temperatura) + sizeof(ldrValue) + sizeof(mq135Value) + sizeof(distanceCm));
 
   // Lee los datos desde la EEPROM
   EEPROM.get(address, humedad);
@@ -216,6 +253,8 @@ void readLastDataFromEEPROM() {
   EEPROM.get(address, ldrValue);
   address += sizeof(ldrValue);
   EEPROM.get(address, mq135Value);
+  address += sizeof(mq135Value);
+  EEPROM.get(address, distanceCm); // Leer la distancia
 
   // Imprime los datos leídos en la consola serie
   Serial.println("Últimos datos guardados leídos de la EEPROM:");
@@ -229,6 +268,8 @@ void readLastDataFromEEPROM() {
   Serial.println(ldrValue);
   Serial.print("Valor del sensor MQ-135: ");
   Serial.println(mq135Value);
+  Serial.print("Distancia: ");
+  Serial.println(distanceCm);
 }
 
 void readAllDataFromEEPROM() {
@@ -237,6 +278,7 @@ void readAllDataFromEEPROM() {
   float temperatura;
   int ldrValue;
   int mq135Value;
+  int distanceCm;
 
   // Dirección de memoria de lectura
   int address = 0;
@@ -254,6 +296,8 @@ void readAllDataFromEEPROM() {
     address += sizeof(ldrValue);
     EEPROM.get(address, mq135Value);
     address += sizeof(mq135Value);
+    EEPROM.get(address, distanceCm); // Leer la distancia
+    address += sizeof(distanceCm);
 
     // Imprime los datos leídos en la consola serie
     Serial.println("-----------------------------");
@@ -267,6 +311,8 @@ void readAllDataFromEEPROM() {
     Serial.println(ldrValue);
     Serial.print("Valor del sensor MQ-135: ");
     Serial.println(mq135Value);
+    Serial.print("Distancia: ");
+    Serial.println(distanceCm);
   }
 
   Serial.println("-----------------------------");

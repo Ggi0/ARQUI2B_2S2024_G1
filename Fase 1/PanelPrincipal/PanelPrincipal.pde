@@ -8,7 +8,10 @@ Serial puertoArduino;
 /*
 sensores = [
   ["HUMEDAD", "90"],
-  ["CO2", "99"]
+  ["CO2", "99"],
+  ["TEMPERATURA", "99"],
+  ["DISTANCIA", "99"],
+  ["LUZ", "99"]
 ]
 */
 ArrayList<String[]> sensores = new ArrayList<String[]>();
@@ -70,7 +73,7 @@ void serialEvent(Serial p){
     String[] datoSensor = splitTokens(datosSensores[i], "/");
     if(datoSensor.length != 2) { continue; }
     
-    if (datoSensor[0].equals("HUMEDAD") || datoSensor[0].equals("CO2") || datoSensor[0].equals( "TEMPERATURA") || datoSensor[0].equals("MOVIMIENTO") || datoSensor[0].equals("LUZ")) {
+    if (datoSensor[0].equals("HUMEDAD") || datoSensor[0].equals("CO2") || datoSensor[0].equals( "TEMPERATURA") || datoSensor[0].equals("DISTANCIA") || datoSensor[0].equals("LUZ")) {
       if(datoSensor[1].charAt(datoSensor[1].length() - 1) == '$'){   
         datoSensor[1] = datoSensor[1].substring(0, datoSensor[1].length() - 1);
       }
