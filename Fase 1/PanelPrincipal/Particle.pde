@@ -1,4 +1,5 @@
 class Particle {
+  PVector _origin;
   PVector position;
   PVector velocity;
   PVector acceleration;
@@ -13,6 +14,7 @@ class Particle {
     acceleration = new PVector(0, factor);
     velocity = new PVector(random(-1, 1), random(-2, 0));
     position = origin.copy();
+    _origin = origin.copy();
     
     // Relación considerando: size(640, 360) ->  lifespan = 255.0
     lifespan = widthPanelH * 255.0 / 640.0;
@@ -35,21 +37,30 @@ class Particle {
 
   // Display partícula
   void display() {
-    stroke(255, lifespan);
-    
-    if ( factor >= maxAcceleration * 5 / 6) {         // a partir del 83% de humedad
+    if ( factor >= maxAcceleration * 2 / 3) {         // a partir del 66.67% de humedad
       blue = #1460D8;
-    } else if (factor >= maxAcceleration * 3 / 6) {   // a partir de 50% de humedad
-        blue = #75A0E3;
-    } else {
-        blue = #9CC0FC;
+    } else if (factor >= maxAcceleration * 1 / 3) {   // a partir de 33.33% de humedad
+      blue = #75A0E3;
+    } else {                                          // color inicial (muy ligero)
+      blue = #9CC0FC;
     }
-    fill(blue, lifespan);
+    
+    if (position.array()[1] < _origin.array()[1]) {
+      noStroke();
+      fill(blue, 0);
+    } else {
+      stroke(255);
+      fill(blue, lifespan);
+    }
     ellipse(position.x, position.y, 10, 10);
   }
 
   // Determina si la partícula debe eliminarse
   boolean isDead() {
     return (lifespan < 0.0);
+  }
+  
+  PVector getPosition(){
+    return position;
   }
 }
