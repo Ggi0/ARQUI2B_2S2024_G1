@@ -21,7 +21,7 @@ class Luz {
 
     f = createFont("Arial", 38);
     f2 = createFont("Arial", 28);
-    textAlign(CENTER, TOP);
+    textAlign(CENTER);
 
     imageMode(CENTER);
     img = loadImage("nube.png");

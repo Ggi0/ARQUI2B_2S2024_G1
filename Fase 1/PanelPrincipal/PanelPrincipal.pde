@@ -20,9 +20,9 @@ sensores = {
 ArrayList<FloatDict> valoresEEPROM = new ArrayList<FloatDict>();
 
 /* Paneles de cada uno de los sensores */
-Humedad panelHumedad;
-Luz     panelLuz;      // Reemplazar por panel de Sensor B
-Humedad panelHumedad3; // Reemplazar por panel de Sensor C
+Humedad     panelHumedad;
+Luz         panelLuz;      // Reemplazar por panel de Sensor B
+Temperatura panelTemperatura; // Reemplazar por panel de Sensor C
 Humedad panelHumedad4; // Reemplazar por panel de Sensor D
 Humedad panelHumedad5; // Reemplazar por panel de Sensor E
 
@@ -52,10 +52,10 @@ void setup() {
    * Tamaño del título, espaciado horizontal entre paneles, espaciado vertical entre paneles, num fila, num columna
    */
   // 1° FILA
-  panelHumedad = new Humedad(heightTitle, horizontalGap, verticalGap, 1, 1);
-  panelLuz     = new Luz(heightTitle, horizontalGap, verticalGap, 1, 2);
+  panelHumedad     = new Humedad(heightTitle, horizontalGap, verticalGap, 1, 1);
+  panelLuz         = new Luz(heightTitle, horizontalGap, verticalGap, 1, 2);
   // 2° FILA
-  panelHumedad3 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 1); // Reemplazar por panel de Sensor C
+  panelTemperatura = new Temperatura(heightTitle, horizontalGap, verticalGap, 2, 1); // Reemplazar por panel de Sensor C
   panelHumedad4 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 2); // Reemplazar por panel de Sensor D
   panelHumedad5 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 3); // Reemplazar por panel de Sensor E
 }
@@ -76,7 +76,8 @@ void draw() {
 
   /* PANELES 2° FILA (3 columnas) */
   // SENSOR C
-  drawBackgroundPanel(panelHumedad3.getPosX(), panelHumedad3.getPosY(), panelHumedad3.getWidth(), panelHumedad3.getHeight());
+  drawBackgroundPanel(panelTemperatura.getPosX(), panelTemperatura.getPosY(), panelTemperatura.getWidth(), panelTemperatura.getHeight());
+  panelTemperatura.drawTemperatura(sensores.get("TEMPERATURA"));
 
   // SENSOR D
   drawBackgroundPanel(panelHumedad4.getPosX(), panelHumedad4.getPosY(), panelHumedad4.getWidth(), panelHumedad4.getHeight());
@@ -93,6 +94,9 @@ void draw() {
     
     sensores.add("LUZ", 1);
     sensores.set("LUZ", sensores.get("LUZ")%100);
+    
+    sensores.add("TEMPERATURA", 1);
+    sensores.set("TEMPERATURA", sensores.get("TEMPERATURA")%100);
   }
 }
 
