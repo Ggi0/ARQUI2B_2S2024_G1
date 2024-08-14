@@ -53,7 +53,7 @@ void setup() {
    */
   // 1° FILA
   panelHumedad = new Humedad(heightTitle, horizontalGap, verticalGap, 1, 1);
-  panelLuz     = new Luz(heightTitle, horizontalGap, verticalGap, 1, 2); // Reemplazar por panel de Sensor B
+  panelLuz     = new Luz(heightTitle, horizontalGap, verticalGap, 1, 2);
   // 2° FILA
   panelHumedad3 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 1); // Reemplazar por panel de Sensor C
   panelHumedad4 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 2); // Reemplazar por panel de Sensor D

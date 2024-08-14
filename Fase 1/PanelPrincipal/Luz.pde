@@ -107,27 +107,10 @@ class Luz {
     float r, g, b;
 
     // Asignar color según el porcentaje de luz
-    if (porcentajeLuz <= 30) {
-        // Opaco
-        r = 100 + random(-10, 10);
-        g = 100 + random(-10, 10);
-        b = 0;
-    } else if (porcentajeLuz <= 50) {
-        // Más claro
-        r = 150 + random(-10, 10);
-        g = 150 + random(-10, 10);
-        b = 0;
-    } else if (porcentajeLuz <= 90) {
-        // Claro
-        r = 200 + random(-10, 10);
-        g = 200 + random(-10, 10);
-        b = 0;
-    } else {
-        // Brillante
-        r = 255 + random(-10, 10);
-        g = 255 + random(-10, 10);
-        b = 0;
-    }
+    // Fórmula considerando que el porcentaje de luz oscila entre 0 a 100
+    r = 155 * porcentajeLuz / 100 + 100;
+    g = 155 * porcentajeLuz / 100 + 100;
+    b = 0;
     
     fill(constrain(r, 0, 255), constrain(g, 0, 255), b); // Asegura que los valores estén entre 0 y 255
     
