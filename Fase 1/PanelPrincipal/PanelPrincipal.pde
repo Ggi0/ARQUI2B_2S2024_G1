@@ -21,7 +21,7 @@ ArrayList<FloatDict> valoresEEPROM = new ArrayList<FloatDict>();
 
 /* Paneles de cada uno de los sensores */
 Humedad panelHumedad;
-Humedad panelHumedad2; // Reemplazar por panel de Sensor B
+Luz     panelLuz;
 Humedad panelHumedad3; // Reemplazar por panel de Sensor C
 Humedad panelHumedad4; // Reemplazar por panel de Sensor D
 Humedad panelHumedad5; // Reemplazar por panel de Sensor E
@@ -53,7 +53,8 @@ void setup() {
    */
   // 1° FILA
   panelHumedad = new Humedad(heightTitle, horizontalGap, verticalGap, 1, 1);
-  panelHumedad2 = new Humedad(heightTitle, horizontalGap, verticalGap, 1, 2); // Reemplazar por panel de Sensor B
+  panelLuz     = new Luz(heightTitle, horizontalGap, verticalGap, 1, 2);
+  
   // 2° FILA
   panelHumedad3 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 1); // Reemplazar por panel de Sensor C
   panelHumedad4 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 2); // Reemplazar por panel de Sensor D
@@ -70,8 +71,9 @@ void draw() {
   drawBackgroundPanel(panelHumedad.getPosX(), panelHumedad.getPosY(), panelHumedad.getWidth(), panelHumedad.getHeight());
   panelHumedad.drawHumedad(sensores.get("HUMEDAD"));
   
-  // SENSOR B
-  drawBackgroundPanel(panelHumedad2.getPosX(), panelHumedad2.getPosY(), panelHumedad2.getWidth(), panelHumedad2.getHeight());
+  // Luz
+  drawBackgroundPanel(panelLuz.getPosX(), panelLuz.getPosY(), panelLuz.getWidth(), panelLuz.getHeight());
+  panelLuz.drawLuz(sensores.get("LUZ"));
 
   /* PANELES 2° FILA (3 columnas) */
   // SENSOR C
@@ -89,6 +91,9 @@ void draw() {
     // Comentar cuando se esté usando el ARDUINO
     sensores.add("HUMEDAD", 1);
     sensores.set("HUMEDAD", sensores.get("HUMEDAD")%100);
+    
+    sensores.add("LUZ", 1);
+    sensores.set("LUZ", sensores.get("LUZ")%100);
   }
 }
 
