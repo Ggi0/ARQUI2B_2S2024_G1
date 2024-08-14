@@ -1,7 +1,7 @@
 class Temperatura{
 
   PImage img;
-  float porcentajeLuz = 0;
+  float porcentajeTemperatura = 0;
   PFont f, f2;
   int _width, _height, _posX, _posY;
   int _heightTitle, _hGap, _vGap, _rowNum, _columnNum;
@@ -10,7 +10,7 @@ class Temperatura{
   boolean increasing = true;
   int waitTime = 50; // Tiempo de espera entre cambios de color
 
-  Luz(int heightTitle, int horizontalGap, int verticalGap, int rowNumber, int columnNumber) {
+  Temperatura(int heightTitle, int horizontalGap, int verticalGap, int rowNumber, int columnNumber) {
     _heightTitle = heightTitle;
     _hGap = horizontalGap;
     _vGap = verticalGap;
@@ -19,29 +19,30 @@ class Temperatura{
 
     updateDimensions();
 
-    f = createFont("Arial", 38);
-    f2 = createFont("Arial", 28);
-    textAlign(CENTER, TOP);
+    f = createFont("Arial", 35);
+    f2 = createFont("Arial", 23);
+    textAlign(CENTER);
 
     imageMode(CENTER);
-    img = loadImage("nube.png");
+    img = loadImage("temperatura.png");
     img.resize(_height, _height);
   }
 
-  void drawLuz(float nuevoporcentajeLuz) {
-    porcentajeLuz = nuevoporcentajeLuz;
+  void drawTemperatura(float nuevoporcentajeTemperatura) {
+    porcentajeTemperatura = nuevoporcentajeTemperatura;
  
     updateDimensions();
-    
-
-    pushMatrix();
-    translate(_width/2 + _posX + -160, _height/2 + -60 + _posY);
-    rotate(frameCount / 400.0);
-    star(0, 0, 110, 130, 60);
-    popMatrix();
-
+   
     //IMAGE
     image(img, _width / 2 + _posX, _height / 2 + _posY);
+    
+    //BARRA TEMPERATURA
+    fill(#E80909);
+    rectMode(CORNERS);
+    // PUNTO MÁS ALTO EN Y: _posY + _height*0.1 > 100%
+    // PUNTO MÁS BAJO EN Y: _posY + _height*0.6 > 0%
+    float factorY = -0.5 * nuevoporcentajeTemperatura / 100 + 0.6;
+    rect(_posX + _width / 2 - 5, _posY + _height*0.75, _posX + 5 + _width / 2, _posY + _height * factorY, 25);
 
     //TEXT
     fill(#0C1464);
@@ -53,11 +54,11 @@ class Temperatura{
       rect(_width/2 + _posX, _height/2 + 150 + _posY, 550, 60, 28);
     } else {
       textFont(f2);
-      rect(_width/2 + _posX, _height/2 + 65 + _posY, _width*0.9, 60, 28);
+      rect(_width/2 + _posX, _height/2 + 150 + _posY, _width*0.9, 60, 28);
     }
 
     fill(255);
-    text("Porcentaje de Luz: " + round(porcentajeLuz) + "%", _width/2 + _posX, _height/2 + 160 + _posY);
+    text("Porcentaje de Temperatura: " + round(porcentajeTemperatura) + "%", _width/2 + _posX, _height/2 + 160 + _posY);
   }
 
   int getWidth() {
@@ -108,8 +109,8 @@ class Temperatura{
 
     // Asignar color según el porcentaje de luz
     // Fórmula considerando que el porcentaje de luz oscila entre 0 a 100
-    r = 155 * porcentajeLuz / 100 + 100;
-    g = 155 * porcentajeLuz / 100 + 100;
+    r = 155 * porcentajeTemperatura / 100 + 100;
+    g = 155 * porcentajeTemperatura / 100 + 100;
     b = 0;
     
     fill(constrain(r, 0, 255), constrain(g, 0, 255), b); // Asegura que los valores estén entre 0 y 255
@@ -141,6 +142,7 @@ void setup(){
 void draw(){
   background(180);
   fill(#E80909);
+  rectMode(CORNERS);
   rect(200, 700, 225, pointY);
   
   if (frameCount % 10 == 0){

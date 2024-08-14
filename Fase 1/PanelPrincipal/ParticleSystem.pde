@@ -18,11 +18,15 @@ class ParticleSystem {
     particles.add(new Particle(origin, factor, maxAcceleration, widthPanelH));
   }
 
-  void run(float nuevoPorcentHumedad, int widthPanelH, int posX, int horizontalGap) {
+  void run(float nuevoPorcentHumedad, int widthPanelH, int posX, int horizontalGap, int heightPanelH, int posY, int verticalGap) {
     for (int i = particles.size()-1; i >= 0; i--) {
       Particle p = particles.get(i);
       p.run();
-      if (p.isDead() || nuevoPorcentHumedad == 0 || p.getPosition().array()[0] < posX + horizontalGap || p.getPosition().array()[0] > posX + widthPanelH - horizontalGap) {
+      if (p.isDead() ||
+          nuevoPorcentHumedad == 0 ||
+          p.getPosition().array()[0] < posX + horizontalGap ||
+          p.getPosition().array()[0] > posX + widthPanelH - horizontalGap ||
+          p.getPosition().array()[1] > posY + heightPanelH - verticalGap) {
         particles.remove(i);
       }
     }
