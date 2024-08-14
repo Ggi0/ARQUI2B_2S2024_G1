@@ -104,16 +104,33 @@ class Luz {
     float angle = TWO_PI / npoints;
     float halfAngle = angle / 2.0;
     
-    // Calcular el brillo del color en función del porcentaje de luz
-    float brilloBase = 255; // Brillo base (cuando porcentajeLuz es 0)
-    float incrementoBrillo = porcentajeLuz / 100.0 * 55; // Incremento de brillo según porcentajeLuz (de 0 a 55)
+    float r, g, b;
+
+    // Asignar color según el porcentaje de luz
+    if (porcentajeLuz <= 30) {
+        // Opaco
+        r = 100 + random(-10, 10);
+        g = 100 + random(-10, 10);
+        b = 0;
+    } else if (porcentajeLuz <= 50) {
+        // Más claro
+        r = 150 + random(-10, 10);
+        g = 150 + random(-10, 10);
+        b = 0;
+    } else if (porcentajeLuz <= 90) {
+        // Claro
+        r = 200 + random(-10, 10);
+        g = 200 + random(-10, 10);
+        b = 0;
+    } else {
+        // Brillante
+        r = 255 + random(-10, 10);
+        g = 255 + random(-10, 10);
+        b = 0;
+    }
     
-    // Color similar al sol, más opaco al inicio y más brillante a medida que aumenta el porcentaje
-    float r = brilloBase + incrementoBrillo + random(0, 10); // Variación aleatoria para simular cambios de luz
-    float g = brilloBase + incrementoBrillo + random(0, 10);
-    float b = 0; // Mantener un tinte anaranjado/amarillo como el sol
+    fill(constrain(r, 0, 255), constrain(g, 0, 255), b); // Asegura que los valores estén entre 0 y 255
     
-    fill(r, g, b);
     beginShape();
     for (float a = 0; a < TWO_PI; a += angle) {
       float sx = x + cos(a) * radius2;

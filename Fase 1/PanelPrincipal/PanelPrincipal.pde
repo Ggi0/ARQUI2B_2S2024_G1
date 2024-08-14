@@ -90,6 +90,9 @@ void draw() {
     // Comentar cuando se esté usando el ARDUINO
     sensores.add("HUMEDAD", 1);
     sensores.set("HUMEDAD", sensores.get("HUMEDAD")%100);
+    
+    sensores.add("LUZ", 1);
+    sensores.set("LUZ", sensores.get("LUZ")%100);
   }
 }
 
