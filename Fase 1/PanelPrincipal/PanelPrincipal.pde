@@ -21,8 +21,8 @@ ArrayList<FloatDict> valoresEEPROM = new ArrayList<FloatDict>();
 
 /* Paneles de cada uno de los sensores */
 Humedad     panelHumedad;
-Luz         panelLuz;      // Reemplazar por panel de Sensor B
-Temperatura panelTemperatura; // Reemplazar por panel de Sensor C
+Luz         panelLuz;
+Temperatura panelTemperatura;
 Humedad panelHumedad4; // Reemplazar por panel de Sensor D
 Humedad panelHumedad5; // Reemplazar por panel de Sensor E
 
@@ -55,7 +55,7 @@ void setup() {
   panelHumedad     = new Humedad(heightTitle, horizontalGap, verticalGap, 1, 1);
   panelLuz         = new Luz(heightTitle, horizontalGap, verticalGap, 1, 2);
   // 2° FILA
-  panelTemperatura = new Temperatura(heightTitle, horizontalGap, verticalGap, 2, 1); // Reemplazar por panel de Sensor C
+  panelTemperatura = new Temperatura(heightTitle, horizontalGap, verticalGap, 2, 1);
   panelHumedad4 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 2); // Reemplazar por panel de Sensor D
   panelHumedad5 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 3); // Reemplazar por panel de Sensor E
 }
@@ -86,7 +86,7 @@ void draw() {
   drawBackgroundPanel(panelHumedad5.getPosX(), panelHumedad5.getPosY(), panelHumedad5.getWidth(), panelHumedad5.getHeight());
 
   // Cada 20 frames, actualiza la información del porcentaje de humedad
-  if (frameCount % 20 == 0) {
+  if (frameCount % 15 == 0) {
     // OJO
     // Comentar cuando se esté usando el ARDUINO
     sensores.add("HUMEDAD", 1);
@@ -117,10 +117,10 @@ void drawTitle() {
   textFont(fontTitle);
   for (int i = 4; i >= 0; i--) {
     fill(0, 0, 0, 255*(4-i)/4);
-    text("Sensores - Proyecto Arqui 2", width/2 - i, heightTitle/2 + 10 - i);
+    text("Sensores Grupo 1 - FASE 1", width/2 - i, heightTitle/2 + 10 - i);
   }
   fill(0);
-  text("Sensores - Proyecto Arqui 2", width/2, heightTitle/2 + 10);
+  text("Sensores Grupo 1 - FASE 1", width/2, heightTitle/2 + 10);
 }
 
 void drawBackgroundPanel(int posX, int posY, int _width, int _height) {
