@@ -175,7 +175,7 @@ void loop() {
         lcd.setCursor(0, 1);  // Segunda línea
         lcd.print("Datos Guardados");
         delay(1000);
-        readLastDataFromEEPROM();
+        readLastDataFromEEPROM(); 
         break;
     }
   }
@@ -317,8 +317,8 @@ void readLastDataFromEEPROM() {
   int distanceCm;
 
   // Dirección de memoria de lectura (la última dirección usada)
-  int address = eepromAddress - (sizeof(humedad) + sizeof(temperatura) + sizeof(ldrValue) + sizeof(mq135Value) + sizeof(distanceCm));
-
+  //int address = eepromAddress - (sizeof(humedad) + sizeof(temperatura) + sizeof(ldrValue) + sizeof(mq135Value) + sizeof(distanceCm));
+  int address = 0;
   // Lee los datos desde la EEPROM
   EEPROM.get(address, humedad);
   address += sizeof(humedad);

@@ -30,7 +30,7 @@ class PanelSensor {
   void display() {
     // Dibujar el marco
     stroke(0);
-    fill(255-ballCount*2);
+    fill(int(255-float(ballCount)/10));
     rect(x, y, w, h, 20);
     
     // Dibujar las bolas

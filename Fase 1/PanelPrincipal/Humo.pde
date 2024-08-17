@@ -11,7 +11,6 @@ class Humo {
   
   PanelSensor panel;
   int lastChangeTime = 0;
-  int changeDuration = 2000; // 2000 milisegundos = 2 segundos
   int valorReferencia = 200; // Valor maximo de referencia
 
   Humo(int heightTitle, int horizontalGap, int verticalGap, int rowNumber, int columnNumber) {
@@ -35,11 +34,9 @@ class Humo {
  
     updateDimensions();
     
-    // Verificar si han pasado 2 segundos
-    if (millis() - lastChangeTime > changeDuration) {
-      createNewPanel();
-      lastChangeTime = millis();
-    }
+
+    createNewPanel();
+
     
     // Actualizar y mostrar el panel
     panel.update();
@@ -59,7 +56,7 @@ class Humo {
     }
 
     fill(255);
-    text("Porcentaje de CO2: " + round(porcentajeHumo) + "%", _width/2 + _posX, _height/2 + 160 + _posY);
+    text("Cantidad de CO2: " + round(porcentajeHumo) + " ppm", _width/2 + _posX, _height/2 + 160 + _posY);
   }
 
   int getWidth() {
@@ -103,8 +100,8 @@ class Humo {
   }
   
   void createNewPanel() {
-    int porcentaje = Math.round(porcentajeHumo);
-    panel = new PanelSensor(_posX, _posY, _width, _height, 5, porcentaje);
+    int porcentaje = Math.round(porcentajeHumo/5.0);
+    panel = new PanelSensor(_posX, _posY, _width, _height, 1, porcentaje);
   }
   
 }

@@ -64,7 +64,7 @@ class Proximidad {
     }
 
     fill(255);
-    text("Porcentaje de Proximidad: " + round(porcentajeProximidad) + "%", _width/2 + _posX, _height/2 + 160 + _posY);
+    text("Proximidad: " + round(porcentajeProximidad) + " cm", _width/2 + _posX, _height/2 + 160 + _posY);
   }
 
   int getWidth() {

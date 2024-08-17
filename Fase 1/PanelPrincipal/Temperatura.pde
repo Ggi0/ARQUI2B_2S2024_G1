@@ -58,7 +58,7 @@ class Temperatura{
     }
 
     fill(255);
-    text("Porcentaje de Temperatura: " + round(porcentajeTemperatura) + "%", _width/2 + _posX, _height/2 + 160 + _posY);
+    text("Temperatura: " + round(porcentajeTemperatura) + "°C", _width/2 + _posX, _height/2 + 160 + _posY);
   }
 
   int getWidth() {

@@ -42,8 +42,8 @@ void setup() {
 
   // OJO
   // Descomentar cuando se esté usando el ARDUINO
-  //puertoArduino = new Serial(this, Serial.list()[0], 9600);
-  //puertoArduino.bufferUntil('$');
+  puertoArduino = new Serial(this, Serial.list()[0], 9600);
+  puertoArduino.bufferUntil('$');
 
   inicializarSensores();
 
@@ -91,7 +91,7 @@ void draw() {
   panelProximidad.drawProximidad(sensores.get("DISTANCIA"));
 
   // Cada 20 frames, actualiza la información del porcentaje de humedad
-  if (frameCount % 15 == 0) {
+  /*if (frameCount % 15 == 0) {
     // OJO
     // Comentar cuando se esté usando el ARDUINO
     sensores.add("HUMEDAD", 1);
@@ -108,7 +108,7 @@ void draw() {
     
     sensores.add("DISTANCIA", 1);
     sensores.set("DISTANCIA", sensores.get("DISTANCIA")%100);
-  }
+  }*/
 }
 
 void drawBackground() {
@@ -194,5 +194,5 @@ void inicializarSensores() {
   sensores.set("CO2", 0.0);
   sensores.set("TEMPERATURA", 0.0);
   sensores.set("DISTANCIA", 0.0);
-  sensores.set("LUZ", 0.0);
+  sensores.set("LUZ", 1023);
 }

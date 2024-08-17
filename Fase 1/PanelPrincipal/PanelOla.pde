@@ -13,9 +13,17 @@ class PanelOla {
     this.w = w;
     this.h = h;
     this.porcentaje = porcentaje;
-    this.velocidad = velocidadReferencia * porcentaje;
-    this.amplitud = amplitudReferencia * porcentaje;
-    this.periodo = periodoReferencia * porcentaje;
+    this.velocidad = velocidadReferencia * CalularPorcentaje(porcentaje);
+    this.amplitud = amplitudReferencia * CalularPorcentaje(porcentaje);
+    this.periodo = periodoReferencia * CalularPorcentaje(porcentaje);
+  }
+  
+  int CalularPorcentaje(int porcentaje){
+     if (porcentaje > 100){
+       porcentaje = 100;
+     }
+     porcentaje = 100 - porcentaje;
+     return porcentaje;
   }
 
   void dibujar(int x, int y, int w, int h) {
@@ -48,8 +56,8 @@ class PanelOla {
 
   void actualizarParametros(int porcentaje) {
     this.porcentaje = porcentaje;
-    this.velocidad = velocidadReferencia * porcentaje;
-    this.amplitud = amplitudReferencia * porcentaje;
-    this.periodo = periodoReferencia * porcentaje;
+    this.velocidad = velocidadReferencia * CalularPorcentaje(porcentaje);
+    this.amplitud = amplitudReferencia * CalularPorcentaje(porcentaje);
+    this.periodo = periodoReferencia * CalularPorcentaje(porcentaje);
   }
 }

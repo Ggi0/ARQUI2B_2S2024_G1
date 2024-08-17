@@ -29,7 +29,11 @@ class Luz {
   }
 
   void drawLuz(float nuevoporcentajeLuz) {
-    porcentajeLuz = nuevoporcentajeLuz;
+    if(nuevoporcentajeLuz > 1023){
+      nuevoporcentajeLuz = 1023;
+    }
+    nuevoporcentajeLuz = 1023 - nuevoporcentajeLuz;
+    porcentajeLuz = nuevoporcentajeLuz / 1023 * 100;
  
     updateDimensions();
     
@@ -57,7 +61,7 @@ class Luz {
     }
 
     fill(255);
-    text("Porcentaje de Luz: " + round(porcentajeLuz) + "%", _width/2 + _posX, _height/2 + 160 + _posY);
+    text("Luz: " + round(porcentajeLuz) + " lumen/m2", _width/2 + _posX, _height/2 + 160 + _posY);
   }
 
   int getWidth() {
