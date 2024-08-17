@@ -23,7 +23,7 @@ ArrayList<FloatDict> valoresEEPROM = new ArrayList<FloatDict>();
 Humedad     panelHumedad;
 Luz         panelLuz;
 Temperatura panelTemperatura;
-Humedad panelHumedad4; // Reemplazar por panel de Sensor D
+Humo        panelHumo; 
 Humedad panelHumedad5; // Reemplazar por panel de Sensor E
 
 /* Diseño de la ventana */
@@ -56,7 +56,7 @@ void setup() {
   panelLuz         = new Luz(heightTitle, horizontalGap, verticalGap, 1, 2);
   // 2° FILA
   panelTemperatura = new Temperatura(heightTitle, horizontalGap, verticalGap, 2, 1);
-  panelHumedad4 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 2); // Reemplazar por panel de Sensor D
+  panelHumo        = new Humo(heightTitle, horizontalGap, verticalGap, 2, 2); // Reemplazar por panel de Sensor D
   panelHumedad5 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 3); // Reemplazar por panel de Sensor E
 }
 
@@ -80,7 +80,8 @@ void draw() {
   panelTemperatura.drawTemperatura(sensores.get("TEMPERATURA"));
 
   // SENSOR D
-  drawBackgroundPanel(panelHumedad4.getPosX(), panelHumedad4.getPosY(), panelHumedad4.getWidth(), panelHumedad4.getHeight());
+  drawBackgroundPanel(panelHumo.getPosX(), panelHumo.getPosY(), panelHumo.getWidth(), panelHumo.getHeight());
+  panelHumo.drawHumo(sensores.get("CO2"));
 
   // SENSOR E
   drawBackgroundPanel(panelHumedad5.getPosX(), panelHumedad5.getPosY(), panelHumedad5.getWidth(), panelHumedad5.getHeight());
@@ -97,6 +98,9 @@ void draw() {
     
     sensores.add("TEMPERATURA", 1);
     sensores.set("TEMPERATURA", sensores.get("TEMPERATURA")%100);
+    
+    sensores.add("CO2", 1);
+    sensores.set("CO2", sensores.get("CO2")%100);
   }
 }
 
