@@ -6,6 +6,9 @@ import processing.serial.*;
 Serial puertoArduino;
 
 FloatDict sensores = new FloatDict();
+
+// Declaración del ángulo inicial
+float theta = 0.0;
 /*
 sensores = {
  "HUMEDAD": 90.0,
@@ -24,7 +27,7 @@ Humedad     panelHumedad;
 Luz         panelLuz;
 Temperatura panelTemperatura;
 Humo        panelHumo; 
-Humedad panelHumedad5; // Reemplazar por panel de Sensor E
+Proximidad  panelProximidad; // Reemplazar por panel de Sensor E
 
 /* Diseño de la ventana */
 int heightTitle = 100;
@@ -57,7 +60,7 @@ void setup() {
   // 2° FILA
   panelTemperatura = new Temperatura(heightTitle, horizontalGap, verticalGap, 2, 1);
   panelHumo        = new Humo(heightTitle, horizontalGap, verticalGap, 2, 2); // Reemplazar por panel de Sensor D
-  panelHumedad5 = new Humedad(heightTitle, horizontalGap, verticalGap, 2, 3); // Reemplazar por panel de Sensor E
+  panelProximidad  = new Proximidad(heightTitle, horizontalGap, verticalGap, 2, 3); // Reemplazar por panel de Sensor E
 }
 
 void draw() {
@@ -84,7 +87,8 @@ void draw() {
   panelHumo.drawHumo(sensores.get("CO2"));
 
   // SENSOR E
-  drawBackgroundPanel(panelHumedad5.getPosX(), panelHumedad5.getPosY(), panelHumedad5.getWidth(), panelHumedad5.getHeight());
+  drawBackgroundPanel(panelProximidad.getPosX(), panelProximidad.getPosY(), panelProximidad.getWidth(), panelProximidad.getHeight());
+  panelProximidad.drawProximidad(sensores.get("DISTANCIA"));
 
   // Cada 20 frames, actualiza la información del porcentaje de humedad
   if (frameCount % 15 == 0) {
@@ -101,6 +105,9 @@ void draw() {
     
     sensores.add("CO2", 1);
     sensores.set("CO2", sensores.get("CO2")%100);
+    
+    sensores.add("DISTANCIA", 1);
+    sensores.set("DISTANCIA", sensores.get("DISTANCIA")%100);
   }
 }
 
