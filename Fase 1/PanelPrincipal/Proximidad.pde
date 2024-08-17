@@ -1,6 +1,5 @@
 class Proximidad {
   
-  PImage img;
   float porcentajeProximidad = 0;
   PFont f, f2;
   int _width, _height, _posX, _posY;
@@ -48,7 +47,7 @@ class Proximidad {
     }
     
     // Actualizar y mostrar el panel
-    panel.dibujar();
+    panel.dibujar(_posX, _posY, _width, _height);
     panel.actualizar();
 
     //TEXT

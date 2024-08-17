@@ -40,11 +40,5 @@ class PanelSensor {
       ball.display();
     }
     popMatrix();
-    
-    // Dibujar el label
-    fill(0);
-    textAlign(CENTER, TOP);
-    textSize(24);
-    text("Porcentaje de C02: " + ballCount + "%", x + w/2, y + h + 10);
   }
 }

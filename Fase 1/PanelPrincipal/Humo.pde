@@ -1,6 +1,5 @@
 class Humo {
 
-  PImage img;
   float porcentajeHumo = 0;
   PFont f, f2;
   int _width, _height, _posX, _posY;
@@ -29,19 +28,12 @@ class Humo {
     textAlign(CENTER);
     
     createNewPanel();
-
-    imageMode(CENTER);
-    img = loadImage("nube.png");
-    img.resize(_height, _height);
   }
 
   void drawHumo(float nuevoPorcentajeHumo) {
     porcentajeHumo = nuevoPorcentajeHumo;
  
     updateDimensions();
-
-    //IMAGE
-    image(img, _width / 2 + _posX, _height / 2 + _posY);
     
     // Verificar si han pasado 2 segundos
     if (millis() - lastChangeTime > changeDuration) {

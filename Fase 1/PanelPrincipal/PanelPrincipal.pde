@@ -59,8 +59,8 @@ void setup() {
   panelLuz         = new Luz(heightTitle, horizontalGap, verticalGap, 1, 2);
   // 2° FILA
   panelTemperatura = new Temperatura(heightTitle, horizontalGap, verticalGap, 2, 1);
-  panelHumo        = new Humo(heightTitle, horizontalGap, verticalGap, 2, 2); // Reemplazar por panel de Sensor D
-  panelProximidad  = new Proximidad(heightTitle, horizontalGap, verticalGap, 2, 3); // Reemplazar por panel de Sensor E
+  panelHumo        = new Humo(heightTitle, horizontalGap, verticalGap, 2, 2);
+  panelProximidad  = new Proximidad(heightTitle, horizontalGap, verticalGap, 2, 3);
 }
 
 void draw() {

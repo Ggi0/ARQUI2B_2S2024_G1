@@ -18,7 +18,12 @@ class PanelOla {
     this.periodo = periodoReferencia * porcentaje;
   }
 
-  void dibujar() {
+  void dibujar(int x, int y, int w, int h) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    
     // Dibujar marco
     stroke(0);
     fill(0);
@@ -35,11 +40,6 @@ class PanelOla {
       angle += periodo; // El periodo controla la distancia entre las olas
     }
     endShape(); // Termina la forma y conecta todos los puntos
-    // Dibujar el label
-    fill(0);
-    textAlign(CENTER, TOP);
-    textSize(24);
-    text("Porcentaje de distancia: " + porcentaje + "%", x + w/2, y + h + 10);
   }
 
   void actualizar() {
