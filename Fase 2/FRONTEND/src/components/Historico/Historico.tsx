@@ -1,5 +1,7 @@
 import React from 'react';
 import { Tajeta } from './Tarjeta';
+import { GraficaLineas } from '../Graficas/GraficaLineas';
+import {GraficaProximidad} from '../Graficas/GraficaProximidad';
 
 export const Historico = () => {
   return (
@@ -12,7 +14,7 @@ export const Historico = () => {
         </div>
         <div className="col">
           <Tajeta titulo='Proximidad'delay={200}>
-            <p>Proximidad</p>
+            <p></p>
           </Tajeta>
         </div>
       </div>
@@ -20,7 +22,7 @@ export const Historico = () => {
       <div className="grid">
         <div className="col">
           <Tajeta titulo='Temperatura y humedad' delay={300}>
-            <p>Temperatura y humedad</p>
+            <GraficaProximidad/>
           </Tajeta>
         </div>
         <div className="col">
