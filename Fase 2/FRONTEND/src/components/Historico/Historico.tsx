@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Tajeta } from './Tarjeta';
+import { GraficaLineas } from '../Graficas/GraficaLineas';
+import {GraficaProximidad} from '../Graficas/GraficaProximidad';
 import { TarjetaDetalle } from './TarjetaDetalle';
+import { Calendario } from './Calendario';
 
 export const Historico = () => {
   // Estados para manejar la visibilidad de los modales
@@ -14,20 +17,20 @@ export const Historico = () => {
     {/* Tarjetas con sus iconos, para desplegar cada uno de los modales */}
       <div className="grid">
         <div className="col">
-          <Tajeta titulo='Calendarios' delay={150}>
-            <p>Calendarios</p>
+          <Tajeta titulo='Calendario de fechas' delay={150}>
+            <Calendario />
           </Tajeta>
         </div>
         <div className="col" onClick={() => setvisibleProximidad(true)}>
           <Tajeta titulo='Proximidad'delay={200}>
-            <p>Proximidad</p>
+            <p></p>
           </Tajeta>
         </div>
       </div>
       <div className="grid">
         <div className="col" onClick={() => setvisibleTemperatura(true)}>
           <Tajeta titulo='Temperatura y humedad' delay={300}>
-            <p>Temperatura y humedad</p>
+            <p></p>
           </Tajeta>
         </div>
         <div className="col" onClick={() => setvisibleLuz(true)}>
@@ -44,7 +47,7 @@ export const Historico = () => {
 
       {/* Modales de cada una de las tarjetas */}
       <TarjetaDetalle titulo="Proximidad" visible={visibleProximidad} setVisible={setvisibleProximidad} >
-        <p> Aqui va la grafica de proximidad</p>
+        <GraficaProximidad/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Temperatura y humedad" visible={visibleTemperatura} setVisible={setvisibleTemperatura} >
         <p> Aqui va la grafica de Temperatura y humedad</p>
