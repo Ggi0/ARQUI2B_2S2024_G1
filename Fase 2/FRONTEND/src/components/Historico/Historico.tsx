@@ -3,6 +3,14 @@ import { Tajeta } from './Tarjeta';
 import { GraficaLineas } from '../Graficas/GraficaLineas';
 import {GraficaProximidad} from '../Graficas/GraficaProximidad';
 import { TarjetaDetalle } from './TarjetaDetalle';
+import '../../styles/img.css';
+
+const ImgAire        = '/data/asset/img/Aire.png';
+const ImgCalendar    = '/data/asset/img/calendar.png';
+const ImgLuz         = '/data/asset/img/Luz.png';
+const ImgTemperatura = '/data/asset/img/Temperatura.png';
+const ImgProximidad  = '/data/asset/img/proximidad.png';
+
 
 export const Historico = () => {
   // Estados para manejar la visibilidad de los modales
@@ -17,29 +25,59 @@ export const Historico = () => {
       <div className="grid">
         <div className="col">
           <Tajeta titulo='Calendarios' delay={150}>
-            <p>Calendarios</p>
+            <div className="flex-container">
+              <img 
+                src={ImgCalendar} 
+                alt="Icono de Proximidad" 
+                style={{ width: '150px', height: '150px' }} 
+              />
+            </div>
           </Tajeta>
         </div>
         <div className="col" onClick={() => setvisibleProximidad(true)}>
           <Tajeta titulo='Proximidad'delay={200}>
-            <p></p>
+            <div className="flex-container">
+              <img 
+                src={ImgProximidad} 
+                alt="Icono de Proximidad" 
+                style={{ width: '150px', height: '150px' }} 
+              />
+            </div>
           </Tajeta>
         </div>
       </div>
       <div className="grid">
         <div className="col" onClick={() => setvisibleTemperatura(true)}>
           <Tajeta titulo='Temperatura y humedad' delay={300}>
-            <p></p>
+            <div className="flex-container">
+              <img 
+                src={ImgTemperatura} 
+                alt="Icono de Proximidad" 
+                style={{ width: '150px', height: '150px' }} 
+              />
+            </div>
           </Tajeta>
         </div>
         <div className="col" onClick={() => setvisibleLuz(true)}>
           <Tajeta titulo='Luz' delay={400}>
-            <p>Luz</p>
+            <div className="flex-container">
+              <img 
+                src={ImgLuz} 
+                alt="Icono de Proximidad" 
+                style={{ width: '150px', height: '150px' }} 
+              />
+            </div>
           </Tajeta>
         </div>
         <div className="col" onClick={() => setvisibleAire(true)}>
           <Tajeta titulo='Aire' delay={500}>
-            <p>Aire</p>
+            <div className="flex-container">
+              <img 
+                src={ImgAire} 
+                alt="Icono de Proximidad" 
+                style={{ width: '150px', height: '150px' }} 
+              />
+            </div>
           </Tajeta>
         </div>
       </div>
