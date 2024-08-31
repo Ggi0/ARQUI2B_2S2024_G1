@@ -1,0 +1,42 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+import Historico from '../components/Historico/Historico.astro';
+import Actual from '../components/Actual/Actual.astro';
+import Mas from '../components/Mas/Mas.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="G1 ARQUI 2 PROYECTO">
+  <Sidebar />
+  <main id="main-content">
+    <!-- El contenido se actualizará dinámicamente con JavaScript -->
+  </main>
+</Layout>
+
+<script>
+  import useStore from '../store';
+
+  function updateContent() {
+    const { activeComponent } = useStore.getState();
+    const mainContent = document.getElementById('main-content');
+	console.log("=============> ", activeComponent)
+    switch (activeComponent) {
+      case 'Historico':
+        mainContent.innerHTML = '<astro-island><Historico /></astro-island>';
+        break;
+      case 'Actual':
+        mainContent.innerHTML = '<astro-island><Actual /></astro-island>';
+        break;
+      case 'Mas':
+        mainContent.innerHTML = '<astro-island><Mas /></astro-island>';
+        break;
+    }
+  }
+
+  useStore.subscribe(updateContent);
+  updateContent(); // Actualizar contenido inicial
+</script>
+
+<style>
+  /* Aquí puedes agregar el estilo para el layout si es necesario */
+</style>

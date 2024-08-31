@@ -1,0 +1,75 @@
+---
+import '../styles/sidebar.css';
+import Historico from '../components/Historico/Historico.astro';
+import Actual from '../components/Actual/Actual.astro';
+import Mas from '../components/Mas/Mas.astro';
+---
+
+<div>
+    <nav id="nav-bar">
+        <div id="nav-header">
+          <a id="nav-title">
+            <img src="/fiusac_logo.png" class="imagen-fiusac" />
+            <h4>FASE 2</h4>
+          </a>
+          <hr />
+        </div>
+        <div id="nav-content">
+          <div class="nav-button" data-component="Historico"> 
+            <i class="fas fa-clock"></i>    
+            <span>Histórico</span>
+          </div>
+          <div class="nav-button" data-component="Actual">    
+            <i class="fas fa-laptop"></i>   
+            <span>Actual</span>
+          </div>
+          <div class="nav-button" data-component="Mas">       
+            <i class="fas fa-ellipsis"></i> 
+            <span>Más</span>
+          </div>
+          <div id="nav-content-highlight"></div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+      <Historico />
+    </main>
+</div>
+
+<script>
+  import useStore from '../store';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.nav-button');
+    const mainContent = document.getElementById('main-content');
+
+    const updateContent = () => {
+      const { activeComponent } = useStore.getState();
+      let componentHtml = '';
+      
+      switch (activeComponent) {
+        case 'Historico':
+          componentHtml = `<Historico />`;
+          break;
+        case 'Actual':
+          componentHtml = `<Actual />`;
+          break;
+        case 'Mas':
+          componentHtml = `<Mas />`;
+          break;
+      }
+
+      mainContent.innerHTML = componentHtml;
+    };
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const component = button.getAttribute('data-component');
+        useStore.getState().setActiveComponent(component);
+      });
+    });
+
+    useStore.subscribe(updateContent);
+    updateContent(); // Actualizar contenido inicial
+  });
+</script>
