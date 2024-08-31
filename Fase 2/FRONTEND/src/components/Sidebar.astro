@@ -1,8 +1,5 @@
 ---
 import '../styles/sidebar.css';
-import Historico from '../components/Historico/Historico.astro';
-import Actual from '../components/Actual/Actual.astro';
-import Mas from '../components/Mas/Mas.astro';
 ---
 
 <div>
@@ -31,9 +28,6 @@ import Mas from '../components/Mas/Mas.astro';
         </div>
     </nav>
 
-    <main id="main-content">
-      <Historico />
-    </main>
 </div>
 
 <script>
@@ -41,35 +35,15 @@ import Mas from '../components/Mas/Mas.astro';
 
   document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.nav-button');
-    const mainContent = document.getElementById('main-content');
-
-    const updateContent = () => {
-      const { activeComponent } = useStore.getState();
-      let componentHtml = '';
-      
-      switch (activeComponent) {
-        case 'Historico':
-          componentHtml = `<Historico />`;
-          break;
-        case 'Actual':
-          componentHtml = `<Actual />`;
-          break;
-        case 'Mas':
-          componentHtml = `<Mas />`;
-          break;
-      }
-
-      mainContent.innerHTML = componentHtml;
-    };
 
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         const component = button.getAttribute('data-component');
+        console.log("....", component)
         useStore.getState().setActiveComponent(component);
       });
     });
 
-    useStore.subscribe(updateContent);
-    updateContent(); // Actualizar contenido inicial
   });
+  
 </script>

@@ -4,8 +4,8 @@
     --navbar-width-min: 80px;
     position: absolute;
     left: 1vw;
-    top: 10vw;
-    height: calc(100% - 10vw);
+    top: 1vw;
+    height: 96vh;
     background: var(--navbar-dark-primary);
     border-radius: 16px;
     display: flex;
