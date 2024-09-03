@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-// Your web app's Firebase configuration
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: process.env.API_KEY,
     authDomain: "arqui2-db.firebaseapp.com",
