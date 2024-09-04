@@ -17,7 +17,7 @@ export async function addSensorValue(sensorData) {
         const newSensorValue = {
             sensorId: sensorData[0],
             timestamp: Date.now(),
-            sensorValue: sensorData[1]
+            sensorValue: parseFloat(sensorData[1])
         };
 
         const response = await insert(newSensorValue);
