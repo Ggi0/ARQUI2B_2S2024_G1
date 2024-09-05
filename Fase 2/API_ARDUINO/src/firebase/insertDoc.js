@@ -1,7 +1,11 @@
 import { db } from './firebase.js';
 import { collection, addDoc } from "firebase/firestore";
 
-const collectionReference = collection(db, "arduino-collection");
+const tempCollection = collection(db, "temp-collection");
+const co2Collection = collection(db, "co2-collection");
+const humCollection = collection(db, "hum-collection");
+const distCollection = collection(db, "dist-collection");
+const luzCollection = collection(db, "luz-collection");
 
 /**
  * Carga individual de medida de sensor, para insertarlo a la DB
@@ -13,6 +17,19 @@ export async function addSensorValue(sensorData) {
             throw new Error('La información recibida no es la correcta');
     }
 
+    var collection;
+    if(sensorData[0] == "HUMEDAD"){
+        collection = humCollection;
+    } else if(sensorData[0] == "CO2"){
+        collection = co2Collection;
+    } else if(sensorData[0] == "TEMPERATURA"){
+        collection = tempCollection;
+    } else if(sensorData[0] == "DISTANCIA"){
+        collection = distCollection;
+    } else {
+        collection = luzCollection;
+    }
+
     try {
         const newSensorValue = {
             sensorId: sensorData[0],
@@ -20,7 +37,7 @@ export async function addSensorValue(sensorData) {
             sensorValue: parseFloat(sensorData[1])
         };
 
-        const response = await insert(newSensorValue);
+        const response = await insert(collection, newSensorValue);
         return response;
     } catch (error) {
         throw new Error(error);
@@ -30,9 +47,9 @@ export async function addSensorValue(sensorData) {
 /**
  * Recibe valor de sensor en JSON para insertarlo a la DB
  */
-const insert = async (newSensorValue) => {
+const insert = async (collection, newSensorValue) => {
     try {
-        const response = await addDoc(collectionReference, newSensorValue);
+        const response = await addDoc(collection, newSensorValue);
         return response;
     } catch (error) {
         throw new Error(error);
