@@ -1,90 +1,84 @@
-// Graficas.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
 
-export const GraficaProximidad = () => {
-    const [option, setOption] = useState(null);
+export const GraficaProximidad = ({ data }) => {
+    const option = useMemo(() => {
+        if (!data) return null;
 
-    useEffect(() => {
-        fetch('/data/asset/data/life-expectancy-table.json')
-            .then(response => response.json())
-            .then(data => {
-                const countries = ['Finland', 'France', 'Germany', 'Iceland', 'Norway', 'Poland', 'Russia', 'United Kingdom'];
-                const datasetWithFilters = [];
-                const seriesList = [];
+        const countries = ['dist-collection'];
+        const datasetWithFilters = [];
+        const seriesList = [];
 
-                countries.forEach(country => {
-                    const datasetId = 'dataset_' + country;
-                    datasetWithFilters.push({
-                        id: datasetId,
-                        fromDatasetId: 'dataset_raw',
-                        transform: {
-                            type: 'filter',
-                            config: {
-                                and: [
-                                    { dimension: 'Year', gte: 1950 },
-                                    { dimension: 'Country', '=': country }
-                                ]
-                            }
-                        }
-                    });
+        countries.forEach(coleccion => {
+            const datasetId = 'dataset_' + coleccion;
+            datasetWithFilters.push({
+                id: datasetId,
+                fromDatasetId: 'dataset_raw',
+                transform: {
+                //    type: 'filter',
+                    config: {
+                        and: [
+                            { dimension: 'sensor' /*  */, gte: 1 }, // Aqui van los filtros
+                            { dimension: 'coleccion', '=': coleccion }
+                        ]
+                    }
+                }
+            });
 
-                    seriesList.push({
-                        type: 'line',
-                        datasetId: datasetId,
-                        showSymbol: false,
-                        name: country,
-                        endLabel: {
-                            show: true,
-                            formatter: params => `${params.value[3]}: ${params.value[0]}`
-                        },
-                        labelLayout: {
-                            moveOverlap: 'shiftY'
-                        },
-                        emphasis: {
-                            focus: 'series'
-                        },
-                        encode: {
-                            x: 'Year',
-                            y: 'Income',
-                            label: ['Country', 'Income'],
-                            itemName: 'Year',
-                            tooltip: ['Income']
-                        }
-                    });
-                });
+            seriesList.push({
+                type: 'line',
+                datasetId: datasetId,
+                showSymbol: false,
+                name: coleccion,
+                endLabel: {
+                    show: true,
+                    formatter: params => `${params.value[3]}: ${params.value[0]}`
+                },
+                labelLayout: {
+                    moveOverlap: 'shiftY'
+                },
+                emphasis: {
+                    focus: 'series'
+                },
+                encode: {
+                    x: 'timestamp',
+                    y: 'sensor',
+                    label: ['coleccion', 'sensor'],
+                    itemName: 'timestamp',
+                    tooltip: ['sensor']
+                }
+            });
+        });
 
-                setOption({
-                    animationDuration: 10000,
-                    dataset: [
-                        {
-                            id: 'dataset_raw',
-                            source: data
-                        },
-                        ...datasetWithFilters
-                    ],
-                    title: {
-                        text: 'Income of Selected Countries since 1950'
-                    },
-                    tooltip: {
-                        order: 'valueDesc',
-                        trigger: 'axis'
-                    },
-                    xAxis: {
-                        type: 'category',
-                        nameLocation: 'middle'
-                    },
-                    yAxis: {
-                        name: 'Income'
-                    },
-                    grid: {
-                        right: 140
-                    },
-                    series: seriesList
-                });
-            })
-            .catch(error => console.error('Error loading data:', error));
-    }, []);
+        return {
+            animationDuration: 10000,
+            dataset: [
+                {
+                    id: 'dataset_raw',
+                    source: data
+                },
+                ...datasetWithFilters
+            ],
+            title: {
+                text: 'sensor of Selected Countries since 1950'
+            },
+            tooltip: {
+                order: 'valueDesc',
+                trigger: 'axis'
+            },
+            xAxis: {
+                type: 'category',
+                nameLocation: 'middle'
+            },
+            yAxis: {
+                name: 'sensor'
+            },
+            grid: {
+                right: 140
+            },
+            series: seriesList
+        };
+    }, [data]);
 
-    return option ? <ReactECharts option={option} style={{ height: 400 }} /> : <p>Loading...</p>;
+    return option ? <ReactECharts option={option} style={{ height: 400 }} /> : <p>No data available</p>;
 };
