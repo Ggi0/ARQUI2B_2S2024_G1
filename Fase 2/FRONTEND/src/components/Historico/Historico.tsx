@@ -7,6 +7,7 @@ import { GraficaTempAndHum } from '../Graficas/GraficaTempAndHum';
 import { TarjetaDetalle } from './TarjetaDetalle';
 import { Calendario } from './Calendario';
 import '../../styles/img.css';
+import DataJSON from '../../../public/data/asset/data/sensor-data.json';
 
 const ImgAire        = '/data/asset/img/Aire.png';
 const ImgCalendar    = '/data/asset/img/calendar.png';
@@ -79,7 +80,7 @@ export const Historico = () => {
         <GraficaProximidad/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Temperatura y humedad" visible={visibleTemperatura} setVisible={setvisibleTemperatura} >
-        <GraficaTempAndHum/>
+        <GraficaTempAndHum data = {DataJSON}/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Luz" visible={visibleLuz} setVisible={setvisibleLuz} >
         <GraficaLuz/>
