@@ -2,6 +2,7 @@
   height: 96vh;
   width: calc(98vw - var(--navbar-width));
   margin-left: var(--navbar-width);
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
 }
+

@@ -3,9 +3,9 @@ import { Tajeta } from './Tarjeta';
 import {GraficaProximidad} from '../Graficas/GraficaProximidad';
 import { GraficaAire } from '../Graficas/GraficaAire';
 import { GraficaLuz } from '../Graficas/GraficaLuz';
+import { GraficaTempAndHum } from '../Graficas/GraficaTempAndHum';
 import { TarjetaDetalle } from './TarjetaDetalle';
 import { Calendario } from './Calendario';
-import DataJson from '../Graficas/data.json'
 import '../../styles/img.css';
 
 const ImgAire        = '/data/asset/img/Aire.png';
@@ -26,16 +26,11 @@ export const Historico = () => {
     <>
     {/* Tarjetas con sus iconos, para desplegar cada uno de los modales */}
       <div className="grid">
-        <div className="col">
-          <Tajeta titulo='Calendario de fechas' delay={150}>
-            <Calendario />
-          </Tajeta>
-        </div>
-        <div className="col" onClick={() => setvisibleProximidad(true)}>
-          <Tajeta titulo='Proximidad'delay={200}>
+        <div className="col" onClick={() => setvisibleTemperatura(true)}>
+          <Tajeta titulo='Temperatura y humedad' delay={300}>
             <div className="flex-container">
               <img 
-                src={ImgProximidad} 
+                src={ImgTemperatura} 
                 alt="Icono de Proximidad" 
                 style={{ width: '150px', height: '150px' }} 
               />
@@ -44,11 +39,11 @@ export const Historico = () => {
         </div>
       </div>
       <div className="grid">
-        <div className="col" onClick={() => setvisibleTemperatura(true)}>
-          <Tajeta titulo='Temperatura y humedad' delay={300}>
+        <div className="col" onClick={() => setvisibleProximidad(true)}>
+          <Tajeta titulo='Proximidad'delay={200}>
             <div className="flex-container">
               <img 
-                src={ImgTemperatura} 
+                src={ImgProximidad} 
                 alt="Icono de Proximidad" 
                 style={{ width: '150px', height: '150px' }} 
               />
@@ -84,7 +79,7 @@ export const Historico = () => {
         <GraficaProximidad/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Temperatura y humedad" visible={visibleTemperatura} setVisible={setvisibleTemperatura} >
-        <p> Aqui va la grafica de Temperatura y humedad</p>
+        <GraficaTempAndHum/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Luz" visible={visibleLuz} setVisible={setvisibleLuz} >
         <GraficaLuz/>
