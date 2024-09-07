@@ -2,27 +2,32 @@ import React, { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts'; // Importación directa de echarts
 
-export const GraficaLuz = () => {
+export const GraficaLuz = ({data}) => {
     const [option, setOption] = useState(null);
 
     useEffect(() => {
-        fetch('/data/asset/data/sensor-data.json')
-            .then(response => response.json())
-            .then(data => {
+        if(data) {
                 // Filtrar solo los datos de "co2-collection"
                 const filteredData = data.slice(1) // Eliminar el encabezado
-                    .filter(item => item[1] === 'co2-collection'); // Filtrar solo "co2-collection"
+                    .filter(item => item[1] === 'luz-collection'); // Filtrar solo "co2-collection"
 
                 // Extraer fechas únicas para el eje X
                 const uniqueDates = [...new Set(filteredData.map(item => item[2]))];
 
-                // Crear una serie de datos para el sensor de CO2
-                const co2SeriesData = filteredData.map(item => item[0]); // Asignar todos los valores del sensor de CO2
+                // Crear una serie de datos para el sensor de Luz
+            const co2SeriesData = filteredData.map(item => {
+                    let valorSensorLuz = item[0];
+                    if (valorSensorLuz > 1023) {
+                        valorSensorLuz = 1023;
+                    }
+                    valorSensorLuz = 1023 - valorSensorLuz;
+                    return valorSensorLuz / 1023 * 100;
+                ;}); // Asignar todos los valores del sensor de Luz
 
                 // Configuración de la gráfica
                 const newOption = {
                     title: {
-                        text: 'Stacked Area Chart - CO2 Levels'
+                    text: 'Light Levels Over Time (lum/m2)'
                     },
                     tooltip: {
                         trigger: 'axis',
@@ -34,7 +39,7 @@ export const GraficaLuz = () => {
                         }
                     },
                     legend: {
-                        data: ['CO2 Levels']
+                        data: ['Light Levels']
                     },
                     toolbox: {
                         feature: {
@@ -77,7 +82,7 @@ export const GraficaLuz = () => {
                     ],
                     series: [
                         {
-                            name: 'CO2 Levels',
+                            name: 'Light Levels',
                             type: 'line',
                             stack: 'Total',
                             emphasis: {
@@ -107,9 +112,8 @@ export const GraficaLuz = () => {
 
                 // Establecer la configuración en el estado
                 setOption(newOption);
-            })
-            .catch(error => console.error('Error loading data:', error));
-    }, []);
+            }
+    }, [data]);
 
     return option ? <ReactECharts option={option} style={{ height: 400 }} /> : <p>Loading...</p>;
 };
