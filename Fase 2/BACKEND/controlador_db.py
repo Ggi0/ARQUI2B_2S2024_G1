@@ -11,7 +11,7 @@ import json
 class BaseData:
     def __init__(self):
         # Toma los datos generales
-        self.credenciales = credentials.Certificate("C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 2\\BACKEND\\clave.json")
+        self.credenciales = credentials.Certificate("clave.json")
         # inicializa la base de datos
         firebase_admin.initialize_app(self.credenciales)
         # Obtén una referencia a la base de datos
