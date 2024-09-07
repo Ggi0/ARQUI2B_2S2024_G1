@@ -8,7 +8,7 @@ import 'primeflex/primeflex.css'
 import'../styles/container.css';
 import {Historico} from './Historico/Historico';
 import {Actual} from './Actual/Actual';
-import {Mas} from './Mas/Mas';
+import {TabIntegrantes} from './Mas/TabIntegrantes';
 
 export const Contenedor = () => {
   // Toma el estado de zustan y controla que componente renderizar.
@@ -20,7 +20,7 @@ export const Contenedor = () => {
       case "Actual":
         return(<Actual/>);
       default:
-        return(<Mas/>);     
+        return(<TabIntegrantes/>);     
     }
   }
   //Lo pone dentro de un contenedor con layout definido
