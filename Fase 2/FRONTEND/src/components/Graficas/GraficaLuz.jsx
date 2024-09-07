@@ -2,33 +2,39 @@ import React, { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts'; // Importación directa de echarts
 
-export const GraficaProximidad = () => {
+export const GraficaLuz = () => {
     const [option, setOption] = useState(null);
 
     useEffect(() => {
         fetch('/data/asset/data/sensor-data.json')
             .then(response => response.json())
             .then(data => {
-                // Filtrar solo los datos de "dist-collection" y la fecha "06/09/2024"
-                const filteredData = data
-                    .slice(1) // Eliminar el encabezado
-                    .filter(item => item[1] === 'dist-collection' && item[2].substr(0, 10) === "06/09/2024") // Filtrar solo "dist-collection" de la fecha específica
-                    .map(item => ({
-                        sensor: item[0],
-                        timestamp: item[2]
-                    }));
+                // Filtrar solo los datos de "co2-collection"
+                const filteredData = data.slice(1) // Eliminar el encabezado
+                    .filter(item => item[1] === 'co2-collection'); // Filtrar solo "co2-collection"
 
-                // Configuración de la gráfica con dataZoom
+                // Extraer fechas únicas para el eje X
+                const uniqueDates = [...new Set(filteredData.map(item => item[2]))];
+
+                // Crear una serie de datos para el sensor de CO2
+                const co2SeriesData = filteredData.map(item => item[0]); // Asignar todos los valores del sensor de CO2
+
+                // Configuración de la gráfica
                 const newOption = {
                     title: {
-                        text: 'TCRT5000 Levels Over Time (dist-collection)'
+                        text: 'Stacked Area Chart - CO2 Levels'
                     },
                     tooltip: {
                         trigger: 'axis',
-                        formatter: params => {
-                            const data = params[0].data;
-                            return `Timestamp: ${data.timestamp}<br/>INFRA ROJO Level: ${data.value}`;
+                        axisPointer: {
+                            type: 'cross',
+                            label: {
+                                backgroundColor: '#6a7985'
+                            }
                         }
+                    },
+                    legend: {
+                        data: ['CO2 Levels']
                     },
                     toolbox: {
                         feature: {
@@ -39,18 +45,25 @@ export const GraficaProximidad = () => {
                             saveAsImage: {}
                         }
                     },
-                    xAxis: {
-                        type: 'category',
-                        boundaryGap: false,
-                        data: filteredData.map(item => item.timestamp),
-                        name: 'Timestamp',
-                        nameLocation: 'middle',
-                        nameGap: 30
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
                     },
-                    yAxis: {
-                        type: 'value',
-                        name: 'INFRA ROJO Level'
-                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: false,
+                            data: uniqueDates // Usar todas las fechas únicas como eje X
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            boundaryGap: [0, '100%']
+                        }
+                    ],
                     dataZoom: [
                         {
                             type: 'inside',
@@ -64,31 +77,30 @@ export const GraficaProximidad = () => {
                     ],
                     series: [
                         {
+                            name: 'CO2 Levels',
                             type: 'line',
-                            data: filteredData.map(item => ({
-                                value: item.sensor,
-                                timestamp: item.timestamp
-                            })),
-                            showSymbol: true,
+                            stack: 'Total',
                             emphasis: {
                                 focus: 'series'
                             },
-                            lineStyle: {
-                                width: 2,
-                                color: 'darkgray' // Línea de color gris oscuro
+                            symbol: 'none',
+                            sampling: 'lttb',
+                            itemStyle: {
+                                color: 'rgb(255, 105, 180)' // Color de línea en rosado
                             },
                             areaStyle: {
                                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                                     {
                                         offset: 0,
-                                        color: 'lightgreen' // Verde claro en la parte superior
+                                        color: 'rgb(255, 182, 193)' // Color inicial rosado claro
                                     },
                                     {
                                         offset: 1,
-                                        color: 'darkgray' // Gris oscuro en la parte inferior
+                                        color: 'rgb(255, 140, 0)' // Color final anaranjado
                                     }
                                 ])
-                            }
+                            },
+                            data: co2SeriesData // Usar los datos del sensor de CO2
                         }
                     ]
                 };

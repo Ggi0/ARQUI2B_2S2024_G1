@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Tajeta } from './Tarjeta';
 import {GraficaProximidad} from '../Graficas/GraficaProximidad';
 import { GraficaAire } from '../Graficas/GraficaAire';
+import { GraficaLuz } from '../Graficas/GraficaLuz';
 import { TarjetaDetalle } from './TarjetaDetalle';
 import { Calendario } from './Calendario';
 import DataJson from '../Graficas/data.json'
@@ -86,7 +87,7 @@ export const Historico = () => {
         <p> Aqui va la grafica de Temperatura y humedad</p>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Luz" visible={visibleLuz} setVisible={setvisibleLuz} >
-        <p> Aqui va la grafica de Luz</p>
+        <GraficaLuz/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Aire" visible={visibleAire} setVisible={setvisibleAire} >
         <GraficaAire/>
