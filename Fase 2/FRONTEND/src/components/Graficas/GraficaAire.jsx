@@ -2,33 +2,33 @@ import React, { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts'; // Importación directa de echarts
 
-export const GraficaProximidad = () => {
+export const GraficaAire = () => {
     const [option, setOption] = useState(null);
 
     useEffect(() => {
         fetch('/data/asset/data/sensor-data.json')
             .then(response => response.json())
             .then(data => {
-                // Filtrar solo los datos de "dist-collection" y la fecha "06/09/2024"
+                // Filtrar solo los datos de "co2-collection"
                 const filteredData = data
                     .slice(1) // Eliminar el encabezado
-                    .filter(item => item[1] === 'dist-collection' && item[2].substr(0, 10) === "06/09/2024") // Filtrar solo "dist-collection" de la fecha específica
-                    .map(item => ({
-                        sensor: item[0],
-                        timestamp: item[2]
-                    }));
+                    .filter(item => item[1] === 'co2-collection'); // Filtrar solo "co2-collection"
 
-                // Configuración de la gráfica con dataZoom
+                // Extraer fechas y valores
+                const date = filteredData.map(item => item[2]); // Array de fechas
+                const co2Values = filteredData.map(item => item[0]); // Array de valores de CO2
+
+                // Configuración de la gráfica
                 const newOption = {
-                    title: {
-                        text: 'TCRT5000 Levels Over Time (dist-collection)'
-                    },
                     tooltip: {
                         trigger: 'axis',
-                        formatter: params => {
-                            const data = params[0].data;
-                            return `Timestamp: ${data.timestamp}<br/>INFRA ROJO Level: ${data.value}`;
+                        position: function (pt) {
+                            return [pt[0], '10%'];
                         }
+                    },
+                    title: {
+                        left: 'center',
+                        text: 'CO2 Levels Over Time'
                     },
                     toolbox: {
                         feature: {
@@ -42,14 +42,11 @@ export const GraficaProximidad = () => {
                     xAxis: {
                         type: 'category',
                         boundaryGap: false,
-                        data: filteredData.map(item => item.timestamp),
-                        name: 'Timestamp',
-                        nameLocation: 'middle',
-                        nameGap: 30
+                        data: date // Utilizar las fechas extraídas
                     },
                     yAxis: {
                         type: 'value',
-                        name: 'INFRA ROJO Level'
+                        boundaryGap: [0, '100%']
                     },
                     dataZoom: [
                         {
@@ -64,31 +61,26 @@ export const GraficaProximidad = () => {
                     ],
                     series: [
                         {
+                            name: 'CO2 Levels',
                             type: 'line',
-                            data: filteredData.map(item => ({
-                                value: item.sensor,
-                                timestamp: item.timestamp
-                            })),
-                            showSymbol: true,
-                            emphasis: {
-                                focus: 'series'
-                            },
-                            lineStyle: {
-                                width: 2,
-                                color: 'darkgray' // Línea de color gris oscuro
+                            symbol: 'none',
+                            sampling: 'lttb',
+                            itemStyle: {
+                                color: 'rgb(255, 70, 131)'
                             },
                             areaStyle: {
                                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                                     {
                                         offset: 0,
-                                        color: 'lightgreen' // Verde claro en la parte superior
+                                        color: 'rgb(255, 158, 68)'
                                     },
                                     {
                                         offset: 1,
-                                        color: 'darkgray' // Gris oscuro en la parte inferior
+                                        color: 'rgb(255, 70, 131)'
                                     }
                                 ])
-                            }
+                            },
+                            data: co2Values // Utilizar los valores de CO2 extraídos
                         }
                     ]
                 };

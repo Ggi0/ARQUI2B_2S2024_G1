@@ -4,11 +4,12 @@ import useStore from '../store';
 import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import 'primeflex/primeflex.css'
+import { TypeAnimation } from 'react-type-animation';
 
 import'../styles/container.css';
 import {Historico} from './Historico/Historico';
 import {Actual} from './Actual/Actual';
-import {Mas} from './Mas/Mas';
+import {TabIntegrantes} from './Mas/TabIntegrantes';
 
 export const Contenedor = () => {
   // Toma el estado de zustan y controla que componente renderizar.
@@ -20,18 +21,31 @@ export const Contenedor = () => {
       case "Actual":
         return(<Actual/>);
       default:
-        return(<Mas/>);     
+        return(<TabIntegrantes/>);     
     }
   }
   //Lo pone dentro de un contenedor con layout definido
   return (
     <>
       <div className="contenedor">
-        <h2>Hola Julian, si ves esto y le quieres meter mano para agregrle las gráficas</h2>
-        <p>Estan en la ruta src/components hay tres carpetas, cada una con un archivo principal que es donde se renderiza el 
-          componente, en el caso del histórico, se renderiza en un sistema de filas y columnas, ya te deje puesto donde 
-          tenes que cabiarlo si queres meter las grafiicas :)
-        </p>
+        <h1>
+        <TypeAnimation
+          sequence={[
+            // Same substring at the start will only be typed once, initially
+            'Arquitectura de computadores y ensambladores 2, Proyecto Unico',
+            1000,
+            'Arquitectura de computadores y ensambladores 2, Control de acceso vehicular',
+            1000,
+            'Arquitectura de computadores y ensambladores 2, Fase 2',
+            1000,
+            'Arquitectura de computadores y ensambladores 2, Fase 2: Ahora es personal',
+            1000,
+          ]}
+          speed={50}
+          style={{ fontSize: '1em' }}
+          repeat={Infinity}
+        />
+        </h1>
         <ComponenteActual />
       </div>
     </>

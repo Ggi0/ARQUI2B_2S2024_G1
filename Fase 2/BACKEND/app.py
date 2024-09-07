@@ -14,6 +14,7 @@ base = BaseData()
 @app.route("/consulta_general")
 def general():
     base._abrir_json()
+    base.ordenar_por_fecha()
     data = base.diccionario #Comentar para pruebas
     #data = base.consulta_general() 
     return data

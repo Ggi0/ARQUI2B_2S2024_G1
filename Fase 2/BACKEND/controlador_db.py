@@ -59,6 +59,23 @@ class BaseData:
 
         return(longitud_colecciones)
     
+    # Seccion para cambio rapido, barre todo en caso tenga timestamp en lugar de fecha y hora
+    def _formateo_fecha_general(self):
+        self._abrir_json()
+        for dict_i in self.diccionario[1:]:
+            dict_i[2] = self.formateo_fechas(dict_i[2])
+        self._escribir_json()
+
+    def ordenar_por_fecha(self):
+        # Extraer el encabezado
+        header = self.diccionario[0]
+        # Ordenar el resto de los datos por la columna de fechas
+        sorted_data = sorted(self.diccionario[1:], key=lambda x: datetime.strptime(x[2], "%d/%m/%Y %H:%M:%S"))
+        # Volver a agregar el encabezado
+        sorted_data.insert(0, header)
+        self.diccionario = sorted_data
+        self._escribir_json()
+
     # Consulta general de datos
     def consulta_general(self):
         # Abre el json de base de datos y valida si es local
@@ -68,11 +85,13 @@ class BaseData:
         # Si las longitudes son iguales, no hubieron cambios
         if longitud_bd == (len(self.diccionario) - 1): # Sin encabezado
             print("============ No han ocurrido cambios ==============")
+            self.ordenar_por_fecha()
             return self.diccionario
 
         print("============ Han ocurrido Cambios ==============")
         print(longitud_bd , (len(self.diccionario) - 1))
-        # Si no hay cambios, hace la consulta general
+        # Si hay cambios, hace la consulta general y limpia el diccionario
+        self.diccionario = []
         # Obtiene de la base de datos el conjunto de colecciones 
         colecciones = self.db.collections()
         # Itera las colecciones para agregar 
@@ -91,7 +110,7 @@ class BaseData:
             # Obtiene la tabla de cada una de las colecciones
             data_coleccion = self.db.collection(coleccion.id).get()
             self.diccionario += [
-                [ temp.to_dict()["sensorValue"], coleccion.id , temp.to_dict()["timestamp"] ]
+                [ temp.to_dict()["sensorValue"], coleccion.id , self.formateo_fechas(temp.to_dict()["timestamp"]) ]
                 for temp in data_coleccion
             ]
 
@@ -100,6 +119,8 @@ class BaseData:
         # Valida que ya posea encabezado
         if self.diccionario[0] != encabezado:
             self.diccionario.insert(0, encabezado)
+        # Reordena el diccionario y lo escribe
+        self.ordenar_por_fecha()
         # Escribe el json
         self._escribir_json()
         return(self.diccionario)
