@@ -26,7 +26,7 @@ app.listen(app.get('port'), () => {
  */
 const getAllDocs = async () => {
     const documents = await getSensorDocs();
-    console.log("== DOCUMENTS FROM FIREBASE DB ==")
+    console.log("== DOCUMENTS FROM FIREBASE DB (arduino-collection) ==")
     documents.forEach(doc => {
         console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
     })
@@ -47,9 +47,6 @@ const setArduinoConnection = async () => {
         if (arduinoData.toString().charAt(0) == '#') {
             return;
         }
-        
-        console.log("=== Datos de SENSORES - ARDUINO ===");
-        console.log(arduinoData.toString());
 
         var sensorValues = arduinoData.toString().split('\n');
 
@@ -65,11 +62,13 @@ const setArduinoConnection = async () => {
     })
 }
 
+var counter = 0;
 // Adding a new document to the Firebase DB
 const addNewSensorValue = async (sensorData) => {
     try {
         const response = await addSensorValue(sensorData);
-        console.log(`New DB entry. ID: ${response.id}`);
+        counter++;
+        console.log(`New DB entry. ID: ${response.id}. Escritura No.${counter}`);
     } catch (error) {
         console.log(error.message);
     }
