@@ -14,8 +14,8 @@ base = BaseData()
 @app.route("/consulta_general")
 def general():
     base._abrir_json()
-    data = base.diccionario
-    #data = base.consulta_general()
+    data = base.diccionario #Comentar para pruebas
+    #data = base.consulta_general() 
     return data
 
 if __name__ == "__main__":
