@@ -87,6 +87,15 @@ export const GraficaTempAndHum = ({ data }) => {
                         name: 'Temperature',
                         type: 'bar',
                         yAxisIndex: 0,
+                        itemStyle: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: '#005187' }, // Amarillo
+                                    { offset: 1, color: '#84B6F4' }  // Naranja
+                                ]
+                            )
+                        },
                         tooltip: {
                             valueFormatter: function (value) {
                                 return value + ' °C';
@@ -98,6 +107,15 @@ export const GraficaTempAndHum = ({ data }) => {
                         name: 'Humidity',
                         type: 'bar',
                         yAxisIndex: 1,
+                        itemStyle: {
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    { offset: 0, color: '#FFE135' }, // Amarillo más claro
+                                    { offset: 1, color: '#FE2020' }  // Naranja más oscuro
+                                ]
+                            )
+                        },
                         tooltip: {
                             valueFormatter: function (value) {
                                 return value + ' %';
