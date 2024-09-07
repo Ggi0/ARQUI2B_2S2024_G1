@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Tajeta } from './Tarjeta';
 import {GraficaProximidad} from '../Graficas/GraficaProximidad';
+import { GraficaAire } from '../Graficas/GraficaAire';
 import { TarjetaDetalle } from './TarjetaDetalle';
 import { Calendario } from './Calendario';
 import DataJson from '../Graficas/data.json'
@@ -79,7 +80,7 @@ export const Historico = () => {
 
       {/* Modales de cada una de las tarjetas */}
       <TarjetaDetalle titulo="Proximidad" visible={visibleProximidad} setVisible={setvisibleProximidad} >
-        <GraficaProximidad data={DataJson}/>
+        <GraficaProximidad/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Temperatura y humedad" visible={visibleTemperatura} setVisible={setvisibleTemperatura} >
         <p> Aqui va la grafica de Temperatura y humedad</p>
@@ -88,7 +89,7 @@ export const Historico = () => {
         <p> Aqui va la grafica de Luz</p>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Aire" visible={visibleAire} setVisible={setvisibleAire} >
-        <p> Aqui va la grafica de Aire</p>
+        <GraficaAire/>
       </TarjetaDetalle>
 
     </>
