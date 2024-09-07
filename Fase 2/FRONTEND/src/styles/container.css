@@ -1,5 +1,7 @@
-.contenedor{
-    height: 96vh;
-    width: calc(98vw - var(--navbar-width));
-    margin-left: var(--navbar-width);
+.contenedor {
+  height: 96vh;
+  width: calc(98vw - var(--navbar-width));
+  margin-left: var(--navbar-width);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

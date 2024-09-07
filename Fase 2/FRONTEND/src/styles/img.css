@@ -1,0 +1,6 @@
+.flex-container {
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100%; /* Asegúrate de que el contenedor tenga suficiente altura */
+}
