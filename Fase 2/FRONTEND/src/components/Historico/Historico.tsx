@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tajeta } from './Tarjeta';
 import {GraficaProximidad} from '../Graficas/GraficaProximidad';
 import { TarjetaDetalle } from './TarjetaDetalle';
 import { Calendario } from './Calendario';
 import DataJson from '../Graficas/data.json'
 import '../../styles/img.css';
+import { APIConsultaGeneral } from '../../../Api/Peticiones';
 
 const ImgAire        = '/data/asset/img/Aire.png';
 const ImgCalendar    = '/data/asset/img/calendar.png';
@@ -19,7 +20,19 @@ export const Historico = () => {
   const [visibleTemperatura, setvisibleTemperatura] = useState(false);
   const [visibleLuz, setvisibleLuz]                 = useState(false);
   const [visibleAire, setvisibleAire]               = useState(false);
-  
+
+  // Estados para guardar la data
+  const [Data, setData] = useState(false);
+
+  // Consulta general cada vez que se recarga la pagina
+  useEffect(()=> {
+    async function ConsultarData() {
+      let respuesta = await APIConsultaGeneral();
+      setData(respuesta);
+    }
+    ConsultarData();
+  }, [])
+
   return (
     <>
     {/* Tarjetas con sus iconos, para desplegar cada uno de los modales */}
@@ -82,7 +95,7 @@ export const Historico = () => {
         <GraficaProximidad data={DataJson}/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Temperatura y humedad" visible={visibleTemperatura} setVisible={setvisibleTemperatura} >
-        <p> Aqui va la grafica de Temperatura y humedad</p>
+        <p> {Data !== false && (<> {Data} </>)} </p>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Luz" visible={visibleLuz} setVisible={setvisibleLuz} >
         <p> Aqui va la grafica de Luz</p>

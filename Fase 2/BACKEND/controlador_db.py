@@ -2,12 +2,16 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 from firebase_admin import firestore
+from google.cloud.firestore_v1 import aggregation
+from google.cloud.firestore_v1.base_query import FieldFilter
 from datetime import datetime
+import json
+
 
 class BaseData:
     def __init__(self):
         # Toma los datos generales
-        self.credenciales = credentials.Certificate("C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 2\\BACKEND\\arqui2-db-firebase-adminsdk-137on-dbfa694095.json")
+        self.credenciales = credentials.Certificate("C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 2\\BACKEND\\clave.json")
         # inicializa la base de datos
         firebase_admin.initialize_app(self.credenciales)
         # Obtén una referencia a la base de datos
@@ -15,6 +19,18 @@ class BaseData:
         # Diccionario que va a funcionar como base de datos
         self.diccionario = []
     
+    def _abrir_json(self):
+        try:
+            with open("database.json", "r") as archivo:
+                self.diccionario = json.load(archivo)
+        except:
+            print ("El archivo no se pudo abrir")
+
+    def _escribir_json(self):
+        # Escribir el diccionario en un archivo JSON
+        with open("database.json", "w") as archivo:
+            json.dump(self.diccionario, archivo, indent=4)  # indent es opcional, solo es para hacerlo más legible
+
     # Formateo de fechas
     def formateo_fechas(self, timestamp):
         # Convertir el timestamp de milisegundos a segundos y luego a datetime
@@ -23,14 +39,46 @@ class BaseData:
         fecha_formateada = data_stamp.strftime("%d/%m/%Y %H:%M:%S")
         return fecha_formateada
     
+    def obtener_longitud_db(self):
+        # Manejador de las colecciones
+        longitud_colecciones = 0
+        # Obtiene de la base de datos el conjunto de colecciones 
+        colecciones = self.db.collections()
+        # Itera las colecciones para agregar 
+        for coleccion in colecciones:
+            # Colecciones no contables
+            if coleccion.id == "arduino-collection" or coleccion.id == "counter-collection":
+                continue
+            # Obtiene la tabla de cada una de las colecciones haciendo un query dummy
+            consulta = self.db.collection(coleccion.id).where(filter=FieldFilter("timestamp", ">", 0))
+            agregacion = aggregation.AggregationQuery(consulta)
+            # `alias` to provides a key for accessing the aggregate query results
+            longitud = agregacion.count(alias="all").get()[0][0].value
+            print(f"longitud de la colección {coleccion.id}...: {longitud}")
+            longitud_colecciones += longitud
+
+        return(longitud_colecciones)
+    
     # Consulta general de datos
     def consulta_general(self):
+        # Abre el json de base de datos y valida si es local
+        self._abrir_json()
+        # Valida la longitud obtenida de la bases
+        longitud_bd = self.obtener_longitud_db()
+        # Si las longitudes son iguales, no hubieron cambios
+        if longitud_bd == (len(self.diccionario) - 1): # Sin encabezado
+            print("============ No han ocurrido cambios ==============")
+            return self.diccionario
+
+        print("============ Han ocurrido Cambios ==============")
+        print(longitud_bd , (len(self.diccionario) - 1))
+        # Si no hay cambios, hace la consulta general
         # Obtiene de la base de datos el conjunto de colecciones 
         colecciones = self.db.collections()
         # Itera las colecciones para agregar 
         for coleccion in colecciones:
             '''
-            colecciones:
+            colecciones válidas:
                 * co2-collection
                 * dist-collection
                 * hum-collection
@@ -38,16 +86,20 @@ class BaseData:
                 * temp-collection
             '''
             # valida que no sea el de arduino, brincando a la siguiente iteracion
-            if coleccion.id == "arduino-collection":
+            if coleccion.id == "arduino-collection" or coleccion.id == "counter-collection":
                 continue
             # Obtiene la tabla de cada una de las colecciones
             data_coleccion = self.db.collection(coleccion.id).get()
             self.diccionario += [
-                [ temp.to_dict()["sensorValue"], coleccion.id , self.temp.to_dict()["timestamp"] ]
+                [ temp.to_dict()["sensorValue"], coleccion.id , temp.to_dict()["timestamp"] ]
                 for temp in data_coleccion
             ]
+
         # Guarda el encabezado
         encabezado = [ "sensor", "coleccion", "timestamp" ]
-        self.diccionario.insert(0, encabezado)
+        # Valida que ya posea encabezado
+        if self.diccionario[0] != encabezado:
+            self.diccionario.insert(0, encabezado)
+        # Escribe el json
+        self._escribir_json()
         return(self.diccionario)
-
