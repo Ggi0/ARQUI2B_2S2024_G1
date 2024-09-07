@@ -89,16 +89,16 @@ export const Historico = () => {
 
       {/* Modales de cada una de las tarjetas */}
       <TarjetaDetalle titulo="Proximidad" visible={visibleProximidad} setVisible={setvisibleProximidad} >
-        <GraficaProximidad data = {DataJSON}/>
+        <GraficaProximidad data = {Data}/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Temperatura y humedad" visible={visibleTemperatura} setVisible={setvisibleTemperatura} >
         <GraficaTempAndHum data = {Data}/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Luz" visible={visibleLuz} setVisible={setvisibleLuz} >
-        <GraficaLuz data = {DataJSON}/>
+        <GraficaLuz data = {Data}/>
       </TarjetaDetalle>
       <TarjetaDetalle titulo="Aire" visible={visibleAire} setVisible={setvisibleAire} >
-        <GraficaAire data = {DataJSON}/>
+        <GraficaAire data = {Data}/>
       </TarjetaDetalle>
 
     </>
