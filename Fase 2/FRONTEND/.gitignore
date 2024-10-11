@@ -4,6 +4,9 @@ dist/
 # generated types
 astro/
 
+# venv folder
+venv/
+
 # dependencies
 node_modules/
 
