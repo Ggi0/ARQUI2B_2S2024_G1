@@ -1,0 +1,211 @@
+2024-10-12 13:08:58,325:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-12 13:08:58,325:INFO:[33mPress CTRL+C to quit[0m
+2024-10-12 13:08:58,326:INFO: * Restarting with stat
+2024-10-12 13:08:58,878:WARNING: * Debugger is active!
+2024-10-12 13:08:58,880:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:10:18,207:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:10:18,207:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:10:18,215:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:10:18,215:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:10:18,236:INFO:127.0.0.1 - - [12/Oct/2024 13:10:18] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:10:27,992:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:10:27,992:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:10:28,005:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:10:28,005:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:10:28,045:INFO:127.0.0.1 - - [12/Oct/2024 13:10:28] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:10:56,179:INFO:127.0.0.1 - - [12/Oct/2024 13:10:56] "[33mGET /consulta_prediccion/1728933040 HTTP/1.1[0m" 404 -
+2024-10-12 13:11:02,126:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:11:02,126:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:11:02,142:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:11:02,142:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:11:02,184:INFO:127.0.0.1 - - [12/Oct/2024 13:11:02] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:11:48,049:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:11:48,083:INFO: * Restarting with stat
+2024-10-12 13:11:48,743:WARNING: * Debugger is active!
+2024-10-12 13:11:48,745:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:11:52,497:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:11:52,497:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:11:52,507:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:11:52,507:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:11:52,529:INFO:127.0.0.1 - - [12/Oct/2024 13:11:52] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:11:57,994:INFO:127.0.0.1 - - [12/Oct/2024 13:11:57] "[35m[1mGET /consulta_prediccion/1728933114 HTTP/1.1[0m" 500 -
+2024-10-12 13:13:56,273:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-12 13:13:56,273:INFO:[33mPress CTRL+C to quit[0m
+2024-10-12 13:13:56,274:INFO: * Restarting with stat
+2024-10-12 13:13:56,814:WARNING: * Debugger is active!
+2024-10-12 13:13:56,818:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:14:01,299:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:14:01,299:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:14:01,309:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:14:01,309:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:14:01,330:INFO:127.0.0.1 - - [12/Oct/2024 13:14:01] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:14:07,663:INFO:127.0.0.1 - - [12/Oct/2024 13:14:07] "[35m[1mGET /consulta_prediccion/1728933244 HTTP/1.1[0m" 500 -
+2024-10-12 13:14:31,560:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\__init__.py', reloading
+2024-10-12 13:14:31,644:INFO: * Restarting with stat
+2024-10-12 13:14:32,242:WARNING: * Debugger is active!
+2024-10-12 13:14:32,243:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:15:43,049:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-12 13:15:43,049:INFO:[33mPress CTRL+C to quit[0m
+2024-10-12 13:15:43,050:INFO: * Restarting with stat
+2024-10-12 13:15:43,589:WARNING: * Debugger is active!
+2024-10-12 13:15:43,591:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:15:50,368:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:15:50,368:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:15:50,378:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:15:50,378:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:15:50,397:INFO:127.0.0.1 - - [12/Oct/2024 13:15:50] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:15:55,910:INFO:127.0.0.1 - - [12/Oct/2024 13:15:55] "[35m[1mGET /consulta_prediccion/1728933351 HTTP/1.1[0m" 500 -
+2024-10-12 13:19:04,004:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:19:04,004:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:19:04,011:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:19:04,011:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:19:04,029:INFO:127.0.0.1 - - [12/Oct/2024 13:19:04] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:20:09,137:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:20:09,181:INFO: * Restarting with stat
+2024-10-12 13:20:09,813:WARNING: * Debugger is active!
+2024-10-12 13:20:09,815:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:20:14,750:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-12 13:20:14,750:INFO:[33mPress CTRL+C to quit[0m
+2024-10-12 13:20:14,751:INFO: * Restarting with stat
+2024-10-12 13:20:15,314:WARNING: * Debugger is active!
+2024-10-12 13:20:15,316:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:20:17,727:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:20:17,727:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:20:17,734:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:20:17,734:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:20:17,753:INFO:127.0.0.1 - - [12/Oct/2024 13:20:17] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:20:27,020:INFO:127.0.0.1 - - [12/Oct/2024 13:20:27] "[35m[1mGET /consulta_prediccion/1728933621 HTTP/1.1[0m" 500 -
+2024-10-12 13:21:22,372:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:21:22,428:INFO: * Restarting with stat
+2024-10-12 13:21:23,069:WARNING: * Debugger is active!
+2024-10-12 13:21:23,071:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:21:25,910:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:21:25,910:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:21:25,916:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:21:25,916:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:21:25,935:INFO:127.0.0.1 - - [12/Oct/2024 13:21:25] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:21:35,445:INFO:127.0.0.1 - - [12/Oct/2024 13:21:35] "[35m[1mGET /consulta_prediccion/1728933687 HTTP/1.1[0m" 500 -
+2024-10-12 13:22:53,632:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:22:53,667:INFO: * Restarting with stat
+2024-10-12 13:22:54,247:WARNING: * Debugger is active!
+2024-10-12 13:22:54,249:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:22:57,514:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-10-12 13:22:57,514:INFO:[33mPress CTRL+C to quit[0m
+2024-10-12 13:22:57,515:INFO: * Restarting with stat
+2024-10-12 13:22:58,036:WARNING: * Debugger is active!
+2024-10-12 13:22:58,038:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:23:05,067:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:23:05,067:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:23:05,075:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:23:05,075:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:23:05,096:INFO:127.0.0.1 - - [12/Oct/2024 13:23:05] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:23:08,473:INFO:127.0.0.1 - - [12/Oct/2024 13:23:08] "[31m[1mGET /consulta_prediccion/1728760985 HTTP/1.1[0m" 400 -
+2024-10-12 13:25:56,325:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\predictor.py', reloading
+2024-10-12 13:25:56,362:INFO: * Restarting with stat
+2024-10-12 13:25:56,926:WARNING: * Debugger is active!
+2024-10-12 13:25:56,927:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:25:58,975:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:25:59,020:INFO: * Restarting with stat
+2024-10-12 13:25:59,637:WARNING: * Debugger is active!
+2024-10-12 13:25:59,639:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:26:06,597:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:26:06,597:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:26:06,605:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:26:06,605:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:26:06,623:INFO:127.0.0.1 - - [12/Oct/2024 13:26:06] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:26:16,396:INFO:127.0.0.1 - - [12/Oct/2024 13:26:16] "[31m[1mGET /consulta_prediccion/1728933971 HTTP/1.1[0m" 400 -
+2024-10-12 13:27:01,452:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:27:01,452:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:27:01,459:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:27:01,459:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:27:01,475:INFO:127.0.0.1 - - [12/Oct/2024 13:27:01] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:27:10,746:INFO:127.0.0.1 - - [12/Oct/2024 13:27:10] "[31m[1mGET /consulta_prediccion/1728761222 HTTP/1.1[0m" 400 -
+2024-10-12 13:28:42,139:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:28:42,174:INFO: * Restarting with stat
+2024-10-12 13:28:42,801:WARNING: * Debugger is active!
+2024-10-12 13:28:42,805:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:28:44,849:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:28:44,878:INFO: * Restarting with stat
+2024-10-12 13:28:45,416:WARNING: * Debugger is active!
+2024-10-12 13:28:45,418:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:30:29,023:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\predictor.py', reloading
+2024-10-12 13:30:29,057:INFO: * Restarting with stat
+2024-10-12 13:30:29,676:WARNING: * Debugger is active!
+2024-10-12 13:30:29,678:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:30:31,718:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:30:31,753:INFO: * Restarting with stat
+2024-10-12 13:30:32,438:WARNING: * Debugger is active!
+2024-10-12 13:30:32,440:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:30:33,984:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:30:33,984:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:30:33,990:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:30:33,990:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:30:34,010:INFO:127.0.0.1 - - [12/Oct/2024 13:30:34] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:30:39,442:INFO:Obteniendo predicciones para timestamp: None
+2024-10-12 13:30:39,442:INFO:127.0.0.1 - - [12/Oct/2024 13:30:39] "[31m[1mGET /consulta_prediccion/1728934235 HTTP/1.1[0m" 400 -
+2024-10-12 13:31:30,367:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\predictor.py', reloading
+2024-10-12 13:31:30,414:INFO: * Restarting with stat
+2024-10-12 13:31:31,047:WARNING: * Debugger is active!
+2024-10-12 13:31:31,049:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:31:32,878:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:31:32,878:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:31:32,885:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:31:32,885:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:31:32,903:INFO:127.0.0.1 - - [12/Oct/2024 13:31:32] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:31:38,076:INFO:Obteniendo predicciones para timestamp: None
+2024-10-12 13:31:38,076:INFO:127.0.0.1 - - [12/Oct/2024 13:31:38] "[31m[1mGET /consulta_prediccion/1728761494 HTTP/1.1[0m" 400 -
+2024-10-12 13:39:00,625:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:39:00,665:INFO: * Restarting with stat
+2024-10-12 13:39:01,282:WARNING: * Debugger is active!
+2024-10-12 13:39:01,284:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:39:13,489:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:39:13,520:INFO: * Restarting with stat
+2024-10-12 13:39:14,142:WARNING: * Debugger is active!
+2024-10-12 13:39:14,145:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:39:20,378:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:39:20,378:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:39:20,388:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:39:20,388:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:39:20,407:INFO:127.0.0.1 - - [12/Oct/2024 13:39:20] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:39:26,762:INFO:antes Obteniendo predicciones para la fecha 1728761962.
+2024-10-12 13:39:26,762:INFO:despues Obteniendo predicciones para la fecha None.
+2024-10-12 13:39:26,762:INFO:127.0.0.1 - - [12/Oct/2024 13:39:26] "[31m[1mGET /consulta_prediccion/1728761962 HTTP/1.1[0m" 400 -
+2024-10-12 13:39:58,809:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:39:58,863:INFO: * Restarting with stat
+2024-10-12 13:39:59,500:WARNING: * Debugger is active!
+2024-10-12 13:39:59,503:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:40:00,958:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:40:00,958:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:40:00,964:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:40:00,964:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:40:00,982:INFO:127.0.0.1 - - [12/Oct/2024 13:40:00] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:40:07,787:INFO:Se obtuvieron 5 colecciones.
+2024-10-12 13:40:08,905:INFO:Predicción obtenida para colección co2-collection.
+2024-10-12 13:40:09,853:INFO:Predicción obtenida para colección dist-collection.
+2024-10-12 13:40:10,789:INFO:Predicción obtenida para colección hum-collection.
+2024-10-12 13:40:11,736:INFO:Predicción obtenida para colección luz-collection.
+2024-10-12 13:40:12,649:INFO:Predicción obtenida para colección temp-collection.
+2024-10-12 13:40:12,650:INFO:Predicciones obtenidas con éxito.
+2024-10-12 13:40:12,652:INFO:127.0.0.1 - - [12/Oct/2024 13:40:12] "GET /consulta_prediccion/1728762002 HTTP/1.1" 200 -
+2024-10-12 13:41:55,333:INFO: * Detected change in 'C:\\Users\\santi\\Desktop\\Arqui_2\\Lab\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-12 13:41:55,372:INFO: * Restarting with stat
+2024-10-12 13:41:55,949:WARNING: * Debugger is active!
+2024-10-12 13:41:55,951:INFO: * Debugger PIN: 121-539-358
+2024-10-12 13:42:19,532:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:42:19,532:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-12 13:42:19,539:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:42:19,539:INFO:Archivo JSON abierto correctamente.
+2024-10-12 13:42:19,558:INFO:127.0.0.1 - - [12/Oct/2024 13:42:19] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-12 13:42:31,000:INFO:Se obtuvieron 5 colecciones.
+2024-10-12 13:42:31,957:INFO:Predicción obtenida para colección co2-collection.
+2024-10-12 13:42:32,911:INFO:Predicción obtenida para colección dist-collection.
+2024-10-12 13:42:33,844:INFO:Predicción obtenida para colección hum-collection.
+2024-10-12 13:42:34,770:INFO:Predicción obtenida para colección luz-collection.
+2024-10-12 13:42:35,706:INFO:Predicción obtenida para colección temp-collection.
+2024-10-12 13:42:35,707:INFO:Predicciones obtenidas con éxito.
+2024-10-12 13:42:35,708:INFO:127.0.0.1 - - [12/Oct/2024 13:42:35] "GET /consulta_prediccion/1729194145 HTTP/1.1" 200 -
