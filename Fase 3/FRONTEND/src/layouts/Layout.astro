@@ -1,0 +1,76 @@
+---
+// Layout.astro
+const { theme = 'Historico', title } = Astro.props;
+
+const themes = {
+  Historico: { bgColor: 'linear-gradient(135deg, rgba(18,48,55,1) 0%, rgba(42,123,75,1) 35%, rgba(76,211,195,1) 100%)', textColor: 'whitesmoke' },
+  Actual: { bgColor: 'black', textColor: 'white' },
+  Mas: { bgColor: 'black', textColor: 'white' },
+  // ... más temas
+};
+
+const currentTheme = themes[theme];
+---
+
+<!doctype html>
+<html lang="en"> 
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image" href="fiusac_logo.png" />
+		<script src="https://kit.fontawesome.com/cd1602cf21.js" crossorigin="anonymous"></script>
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global define:vars={currentTheme}>
+	:root {
+		--accent: 136, 58, 234;
+		--background: #fcfcfc;
+		--navbar-width: 256px;
+		--navbar-width-min: 80px;
+		--navbar-dark-primary: #141618;
+		--navbar-dark-secondary: #2c3e50;
+		--navbar-light-primary: #f5f6fa;
+		--navbar-light-secondary: #8392a5;
+	}
+	html {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		font-family: system-ui, sans-serif;
+		color: var(--textColor); 
+
+		background: var(--bgColor);
+		background-size: 200% 200%;
+		animation: gradient 15s ease infinite;
+		height: 100vh;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+
+	@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+</style>

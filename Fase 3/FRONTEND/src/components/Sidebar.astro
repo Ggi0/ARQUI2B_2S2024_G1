@@ -1,0 +1,53 @@
+---
+import '../styles/sidebar.css';
+---
+
+<div>
+    <nav id="nav-bar">
+        <div id="nav-header">
+          <a id="nav-title">
+            <img src="/fiusac_logo.png" class="imagen-fiusac" />
+            <h4>FASE 2</h4>
+          </a>
+          <hr />
+        </div>
+        <div id="nav-content">
+          <div class="nav-button" data-component="Historico"> 
+            <i class="fas fa-clock"></i>    
+            <span>Histórico</span>
+          </div>
+          <div class="nav-button" data-component="Actual">    
+            <i class="fas fa-laptop"></i>   
+            <span>Actual</span>
+          </div> 
+          <div class="nav-button" data-component="Prediccion">    
+            <i class="fas fa-clock"></i>   
+            <span>Pronostico</span>
+          </div>
+          <div class="nav-button" data-component="Mas">       
+            <i class="fas fa-ellipsis"></i> 
+            <span>Más</span>
+          </div>
+          <div id="nav-content-highlight"></div>
+        </div>
+    </nav>
+
+</div>
+
+<script>
+  import useStore from '../store';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.nav-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const component = button.getAttribute('data-component');
+        console.log("....", component)
+        useStore.getState().setActiveComponent(component);
+      });
+    });
+
+  });
+  
+</script>

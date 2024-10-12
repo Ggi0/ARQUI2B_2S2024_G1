@@ -1,0 +1,35 @@
+.flex-container {
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100%; /* Asegúrate de que el contenedor tenga suficiente altura */
+}
+
+.imagen-tarjeta {
+  width: 150px;
+  height: 150px;
+  transition: 0.5s;
+}
+
+.imagen-tarjeta:hover {
+  transform: scale3d(1.3, 1.3, 1.3);
+  transition: 0.5s;
+}
+
+.predict-flex-container {
+  display: flex; /* Activa Flexbox */
+  justify-content: start; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100%; /* Asegúrate de que el contenedor tenga suficiente altura */
+}
+
+.predict-imagen-tarjeta {
+  width: 100px;
+  height: 100px;
+  transition: 0.5s;
+}
+
+.predict-imagen-tarjeta:hover {
+  transform: scale3d(2, 2, 0.05) translateX(15%);
+  transition: 0.5s;
+}
