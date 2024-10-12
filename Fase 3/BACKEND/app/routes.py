@@ -45,7 +45,7 @@ def configure_routes(app):
         Ruta que obtiene predicciones basado en el timestamp pasado como parámetro.
         """
         """
-            Como buena practica se debe hacar: 
+            Como buena practica se debe hacer: 
                 request.args: Este es un objeto en Flask que contiene los 
                 parámetros de consulta de la solicitud HTTP. Los parámetros 
                 de consulta son aquellos que vienen en la URL después del 
