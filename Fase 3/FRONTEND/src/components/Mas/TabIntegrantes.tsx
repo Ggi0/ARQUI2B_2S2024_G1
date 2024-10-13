@@ -4,7 +4,7 @@ import '../../styles/TablaFuturista.css'; // Importar los estilos
 export const TabIntegrantes = () => {
   const miembros = [
     { nombre: 'Santiago Julián Barrera Reyes', rol: '201905584' },
-    { nombre: 'Evelio Marcos Jousué Cruz Zolis', rol: '202010040' },
+    { nombre: 'Evelio Marcos Jousué Cruz Solíz', rol: '202010040' },
     { nombre: 'Elías Abraham Vasquez Soto', rol: '201900131' },
     { nombre: 'Giovanni Saul Concohá Cax', rol: '202100229' },
     { nombre: 'Jemima Solmaira Chavajay Quiejú', rol: '201801521' }
