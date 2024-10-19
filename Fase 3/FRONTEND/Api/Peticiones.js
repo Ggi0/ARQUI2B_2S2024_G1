@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const configuracion = {
-    baseURL: 'http://127.0.0.1:5000',
+    baseURL: 'https://b4e8-2800-98-1111-1327-00-7.ngrok-free.app',
     headers: {
         'Content-Type': 'application/json'
     }
