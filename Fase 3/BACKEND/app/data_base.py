@@ -20,10 +20,9 @@ class BaseData:
     def __init__(self):
         # Diccionario que va a funcionar como base de datos
         self.diccionario = []
-        #self.base_url    = "http://34.29.61.196:8000/api/colecciones/"  # URL de la API
-        self.base_url    = "http://127.0.0.1:8000/api/colecciones/"  # URL de la API
-        self.url_parqueo = "http://127.0.0.1:8000/api/incrementar-aperturas"  
-        self.url_usuario = "http://127.0.0.1:8000/api/validar-usuario"  
+        self.base_url    = "http://35.225.168.189:8000/api/colecciones/"  # URL de la API
+        self.url_parqueo = "http://35.225.168.189:8000/api/incrementar-aperturas"  
+        self.url_usuario = "http://35.225.168.189:8000/api/validar-usuario"  
 
     def _abrir_json(self) -> None:
         try:
@@ -120,6 +119,7 @@ class BaseData:
                             self.diccionario = response.json()
                             self._ordenar_por_fecha(self.diccionario)  # Ordenar por fecha
                             self._escribir_json()  # Guardar datos en archivo
+                            self._abrir_json()
                             logger.info("Datos obtenidos y guardados desde la API correctamente.")
                             return self.diccionario
                         except json.JSONDecodeError as e:

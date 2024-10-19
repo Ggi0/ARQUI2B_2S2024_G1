@@ -29,7 +29,6 @@ export const Prediccion = () => {
 
     // Funcion que consulta a la api de las predicciones
     const ConsultarPredicciones = async () => {
-        console.log(datetime24h.getTime());
         // Valida que se seleccione una fecha
         if (datetime24h === null){
             return;
@@ -39,6 +38,7 @@ export const Prediccion = () => {
         SetBtnBusqueda("Buscando..")
         SetBtnDisabled(true)
         const response = await APIConsultaPrediccion(fechaSolicitada);
+        console.log(response)
         // Recorre el arreglo y setea los valores
         response.map((x) => {
             if (x.sensor === 'hum-collection'){

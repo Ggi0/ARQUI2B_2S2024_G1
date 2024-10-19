@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 class Predictor:
     def __init__(self):
-        self.ruta_api = "http://34.29.61.196:8000/api/"
+        self.ruta_api = "http://35.225.168.189:8000/api/"
     
     def ObtenerPredicciones(self, fecha_timestamp) -> list:
         """
