@@ -2,6 +2,7 @@ from flask import request,jsonify
 from .data_base import BaseData
 from .predictor import Predictor
 import logging
+import requests
 
 # Crear instancia de BaseData
 base_data = BaseData()
@@ -71,6 +72,13 @@ def configure_routes(app):
     def consulta_usuario(user, password): 
         try:
             data_respuesta, mensaje = base_data.consulta_usuario(user, password)
+            if data_respuesta:
+                URL_BD_CONTADOR = 'http://35.225.168.189:8000/api/incrementar-aperturas/1'
+                put_response = requests.put(URL_BD_CONTADOR)
+                if put_response.status_code == 200:
+                    mensaje += ' Suma a contador en BD exitosa.'
+                else:
+                    mensaje += ' Suma a contador en BD fallida.'
             logger.info("Apretura incrementada con exito")
             return jsonify({"ok": data_respuesta, 'mensaje': mensaje}), 200
         except Exception as e:

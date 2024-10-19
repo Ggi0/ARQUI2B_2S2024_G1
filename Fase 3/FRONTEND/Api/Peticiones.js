@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const configuracion = {
-    //baseURL: 'https://1dc0-2800-98-1111-1327-00-7.ngrok-free.app',
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'https://b4e8-2800-98-1111-1327-00-7.ngrok-free.app',
     headers: {
         'Content-Type': 'application/json',
         'ngrok-skip-browser-warning': 'true' 
