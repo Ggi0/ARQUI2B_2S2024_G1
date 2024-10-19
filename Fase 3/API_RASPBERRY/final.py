@@ -227,7 +227,7 @@ try:
             else:
                 print("Linea vacia o invalida recibida.")
 
-            time.sleep(2)
+            # time.sleep(2)
 except KeyboardInterrupt:
     print("Interrupcion manual por el usuario")
 
