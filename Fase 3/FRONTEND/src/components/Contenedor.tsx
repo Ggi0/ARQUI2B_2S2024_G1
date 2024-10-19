@@ -11,6 +11,7 @@ import {Historico} from './Historico/Historico';
 import {Actual} from './Actual/Actual';
 import { Prediccion } from './Prediccion/Prediccion';
 import {TabIntegrantes} from './Mas/TabIntegrantes';
+import { Parqueo } from './Parqueo/Parqueo';
 
 export const Contenedor = () => {
   // Toma el estado de zustan y controla que componente renderizar.
@@ -23,6 +24,8 @@ export const Contenedor = () => {
         return(<Actual/>);
       case "Prediccion":
         return(<Prediccion/>);
+        case "Parqueo":
+          return(<Parqueo/>);  
       default:
         return(<TabIntegrantes/>);     
     }

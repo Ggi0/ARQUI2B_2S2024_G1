@@ -7,7 +7,7 @@ class Publisher:
     def __init__(self):
         # Configuración del cliente MQTT
         self.broker = 'broker.emqx.io'
-        self.puerto = 1883
+        self.puerto = 1883 
         self.topico = 'arqui2_2s2024/topico_sensores'
         self.cliente = mqtt.Client()
         self.cliente.connect(self.broker, self.puerto, 60)
