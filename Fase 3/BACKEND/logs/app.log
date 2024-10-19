@@ -903,3 +903,52 @@
 2024-10-19 10:18:40,359:INFO:127.0.0.1 - - [19/Oct/2024 10:18:40] "GET /consulta_prediccion/1729354690 HTTP/1.1" 200 -
 2024-10-19 10:21:09,985:INFO: * Detected change in 'C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\predictor.py', reloading
 2024-10-19 10:21:10,033:INFO: * Restarting with stat
+2024-10-19 10:21:10,713:WARNING: * Debugger is active!
+2024-10-19 10:21:10,719:INFO: * Debugger PIN: 958-996-501
+2024-10-19 10:21:16,470:INFO:127.0.0.1 - - [19/Oct/2024 10:21:16] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 10:21:16,717:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-19 10:21:16,717:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-19 10:21:16,717:INFO:Archivo JSON abierto correctamente.
+2024-10-19 10:21:16,717:INFO:Archivo JSON abierto correctamente.
+2024-10-19 10:21:16,764:INFO:127.0.0.1 - - [19/Oct/2024 10:21:16] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 10:21:39,065:INFO:127.0.0.1 - - [19/Oct/2024 10:21:39] "OPTIONS /consulta_prediccion/1729873292 HTTP/1.1" 200 -
+2024-10-19 10:21:47,952:INFO:Se obtuvieron 5 colecciones.
+2024-10-19 10:21:49,155:INFO:Predicción obtenida para colección co2-collection.
+2024-10-19 10:21:50,295:INFO:Predicción obtenida para colección dist-collection.
+2024-10-19 10:21:51,505:INFO:Predicción obtenida para colección hum-collection.
+2024-10-19 10:21:52,617:INFO:Predicción obtenida para colección luz-collection.
+2024-10-19 10:21:53,982:INFO:Predicción obtenida para colección temp-collection.
+2024-10-19 10:21:53,982:INFO:Predicciones obtenidas con éxito.
+2024-10-19 10:21:53,982:INFO:127.0.0.1 - - [19/Oct/2024 10:21:53] "GET /consulta_prediccion/1729873292 HTTP/1.1" 200 -
+2024-10-19 10:22:58,460:INFO:127.0.0.1 - - [19/Oct/2024 10:22:58] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 10:22:58,709:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-19 10:22:58,709:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-19 10:22:58,716:INFO:Archivo JSON abierto correctamente.
+2024-10-19 10:22:58,716:INFO:Archivo JSON abierto correctamente.
+2024-10-19 10:22:58,758:INFO:127.0.0.1 - - [19/Oct/2024 10:22:58] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 10:23:06,372:INFO:127.0.0.1 - - [19/Oct/2024 10:23:06] "OPTIONS /consulta_usuario/arqui2/4320 HTTP/1.1" 200 -
+2024-10-19 10:23:06,678:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 10:23:06,678:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 10:23:07,448:INFO:Apretura incrementada con exito
+2024-10-19 10:23:07,448:INFO:127.0.0.1 - - [19/Oct/2024 10:23:07] "GET /consulta_usuario/arqui2/4320 HTTP/1.1" 200 -
+2024-10-19 10:23:15,354:INFO:127.0.0.1 - - [19/Oct/2024 10:23:15] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 10:23:15,666:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 10:23:15,666:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 10:23:16,437:INFO:Apretura incrementada con exito
+2024-10-19 10:23:16,437:INFO:127.0.0.1 - - [19/Oct/2024 10:23:16] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 10:25:10,572:INFO:127.0.0.1 - - [19/Oct/2024 10:25:10] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 10:25:10,828:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-19 10:25:10,828:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-19 10:25:10,841:INFO:Archivo JSON abierto correctamente.
+2024-10-19 10:25:10,841:INFO:Archivo JSON abierto correctamente.
+2024-10-19 10:25:10,869:INFO:127.0.0.1 - - [19/Oct/2024 10:25:10] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:25:31,342:INFO:127.0.0.1 - - [19/Oct/2024 11:25:31] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:25:31,599:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-19 11:25:31,599:INFO:Leyendo datos desde archivo local 'database.json'.
+2024-10-19 11:25:31,613:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:25:31,613:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:25:31,650:INFO:127.0.0.1 - - [19/Oct/2024 11:25:31] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:30:57,177:INFO: * Detected change in 'C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\routes.py', reloading
+2024-10-19 11:30:57,209:INFO: * Restarting with stat
+2024-10-19 11:30:57,938:WARNING: * Debugger is active!
+2024-10-19 11:30:57,938:INFO: * Debugger PIN: 958-996-501

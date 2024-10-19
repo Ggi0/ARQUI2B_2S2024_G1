@@ -7,11 +7,9 @@ import { InputText } from "primereact/inputtext";
 import { Button } from 'primereact/button';
 import { APIConsultaParqueo, APIConsultaUsuario } from '../../../Api/Peticiones';
 
-const ImgAire = '/data/asset/img/Aire.png';
-const ImgLuz = '/data/asset/img/Luz.png';
-const ImgTemperatura = '/data/asset/img/Temperatura.png';
-const ImgHumedad = '/data/asset/img/Temperatura.png';
-const ImgProximidad = '/data/asset/img/proximidad.png';
+
+const ImgProximidad = '/data/asset/img/ubicacion.png';
+
 
 
 export const Parqueo = () => {
@@ -25,6 +23,7 @@ export const Parqueo = () => {
       const client = new Client('broker.emqx.io', 8083, 'subscriber-client');
       // Cuando llega un mensaje
       client.onMessageArrived = (msg) => {
+        console.log("mensaje parqueo", msg); 
         // Valida si no ha ingresado carro
           if (msg != 0 && msg){
             setStatusCarro("Se ha ingresado Carro");
@@ -46,35 +45,55 @@ export const Parqueo = () => {
     }, [])
 
     
-    const MQTTPublicar = (topico, mensaje)  => {
-        let mqttClient = new Client('broker.emqx.io', 8083, 'publisher-client');
-        // Valida si se ha conectado bien
-        mqttClient.connect({
+    const MQTTPublicar = (topico, mensaje) => {
+        const clientId = `cliente-publicador-${Math.random().toString(16).slice(2)}`;
+        let clienteMqtt = new Client('ws://broker.emqx.io:8083/mqtt', clientId);
+    
+        clienteMqtt.onConnectionLost = (responseObject) => {
+            if (responseObject.errorCode !== 0) {
+                console.error('Conexión perdida:', responseObject.errorMessage);
+            }
+        };
+    
+        clienteMqtt.connect({
             onSuccess: () => {
-                // Si no hay error escribe en el topico
+                console.log("Conectado exitosamente al broker MQTT");
                 const msg = new Message(mensaje);
                 msg.destinationName = topico;
-                mqttClient.send(msg);
+                clienteMqtt.send(msg);
                 console.log(`Publicado: ${mensaje} en ${topico}`);
+                setTimeout(() => {
+                    clienteMqtt.disconnect();
+                    console.log("Desconectado del broker MQTT");
+                }, 500); // 0.5 segundo de retraso
             },
             onFailure: (err) => {
-                console.error('Error conectando al broker:', err);
-                return;
+                console.error('Error al conectar con el broker:', err);
+                if (err.errorCode) {
+                    console.error('Código de error:', err.errorCode);
+                }
+                if (err.errorMessage) {
+                    console.error('Mensaje de error:', err.errorMessage);
+                }
             }
         });
-        
     }
-
+    
+    
+    
+    
+    
     const ValidarUsuario = async () => {
         const response = await APIConsultaUsuario(Usuario, Pass);
         console.log(response.ok)
         // Valida si la respuesta es no, manda el mensaje
         if (response.ok == false){
             alert(response.mensaje);
+            MQTTPublicar("arqui2_2s2024/desbloqueo_usuario", "2");
             return;
         }
         // Si la respuesta es si, abre la talanquera
-        MQTTPublicar("arqui2_2s2024/desbloqueo_usuario", 1);
+        MQTTPublicar("arqui2_2s2024/desbloqueo_usuario", "1");
         alert(response.mensaje);
     }
 
@@ -121,9 +140,10 @@ export const Parqueo = () => {
                         <div className="col-12">
                             <Tajeta titulo='Control de luces' delay={200}>
                                 <div className="predict-flex-container">
-                                    <Button style={{marginInline: '2%'}} label="Encender Luces" onClick={MQTTPublicar("arqui2_2s2024/prender_luces", 0)} severity="help" outlined raised />
-                                    <Button style={{marginInline: '2%'}} label="Apagar Luces"   onClick={MQTTPublicar("arqui2_2s2024/prender_luces", 1)} severity="Secondary" outlined raised />
-                                    <Button style={{marginInline: '2%'}} label="Automatico"     onClick={MQTTPublicar("arqui2_2s2024/prender_luces", 2)} severity="info" outlined raised />
+                                <Button style={{marginInline: '2%'}} label="Apagar Luces" onClick={() => MQTTPublicar("arqui2_2s2024/prender_luces", "0")} severity="help" outlined raised />
+                                <Button style={{marginInline: '2%'}} label="Encender Luces" onClick={() => MQTTPublicar("arqui2_2s2024/prender_luces", "1")} severity="Secondary" outlined raised />
+                                <Button style={{marginInline: '2%'}} label="Automatico" onClick={() => MQTTPublicar("arqui2_2s2024/prender_luces", "2")} severity="info" outlined raised />
+
                                 </div>
                             </Tajeta>
                         </div>

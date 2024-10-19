@@ -8,7 +8,7 @@ import { APIConsultaPrediccion } from '../../../Api/Peticiones';
 const ImgAire = '/data/asset/img/Aire.png';
 const ImgLuz = '/data/asset/img/Luz.png';
 const ImgTemperatura = '/data/asset/img/Temperatura.png';
-const ImgHumedad = '/data/asset/img/Temperatura.png';
+const ImgHumedad = '/data/asset/img/tacita.png';
 const ImgProximidad = '/data/asset/img/proximidad.png';
 
 

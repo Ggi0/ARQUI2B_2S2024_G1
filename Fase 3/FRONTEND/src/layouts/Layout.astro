@@ -3,7 +3,7 @@
 const { theme = 'Historico', title } = Astro.props;
 
 const themes = {
-  Historico: { bgColor: 'linear-gradient(135deg, rgba(18,48,55,1) 0%, rgba(42,123,75,1) 35%, rgba(76,211,195,1) 100%)', textColor: 'whitesmoke' },
+  Historico: { bgColor: 'linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 50%, #ffffff 100%);', textColor: 'whitesmoke' },
   Actual: { bgColor: 'black', textColor: 'white' },
   Mas: { bgColor: 'black', textColor: 'white' },
   // ... más temas
@@ -13,7 +13,7 @@ const currentTheme = themes[theme];
 ---
 
 <!doctype html>
-<html lang="en"> 
+<html lang="en">  
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />

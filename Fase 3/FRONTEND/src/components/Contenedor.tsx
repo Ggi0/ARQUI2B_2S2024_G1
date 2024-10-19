@@ -1,7 +1,6 @@
 import React from 'react';
 import useStore from '../store';
 
-import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import 'primeflex/primeflex.css'
 import { TypeAnimation } from 'react-type-animation';
@@ -42,9 +41,9 @@ export const Contenedor = () => {
             1000,
             'Arquitectura de computadores y ensambladores 2, Control de acceso vehicular',
             1000,
-            'Arquitectura de computadores y ensambladores 2, Fase 2',
+            'Arquitectura de computadores y ensambladores 2, Fase 3',
             1000,
-            'Arquitectura de computadores y ensambladores 2, Fase 2: Ahora es personal',
+            'Arquitectura de computadores y ensambladores 2, Fase 3: Resurección',
             1000,
           ]}
           speed={50}

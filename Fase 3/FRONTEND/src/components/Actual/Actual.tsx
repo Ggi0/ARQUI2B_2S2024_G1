@@ -6,7 +6,7 @@ import { Client } from 'paho-mqtt';
 const ImgAire = '/data/asset/img/Aire.png';
 const ImgLuz = '/data/asset/img/Luz.png';
 const ImgTemperatura = '/data/asset/img/Temperatura.png';
-const ImgHumedad = '/data/asset/img/Temperatura.png';
+const ImgHumedad = '/data/asset/img/tacita.png';
 const ImgProximidad = '/data/asset/img/proximidad.png';
 
 
@@ -26,8 +26,8 @@ export const Actual = () => {
           const respuestaMQTT = JSON.parse(msg.payloadString)
           setDataHumedad(respuestaMQTT.humedad);
           setDataTemperatura(respuestaMQTT.temperatura);
-          setDataDistancia(respuestaMQTT.distancia);
-          setDataLuz(respuestaMQTT.luz);
+          setDataDistancia(respuestaMQTT.ultrasonico);
+          setDataLuz(respuestaMQTT.luminosidad);
           setDataAire(respuestaMQTT.aire);
       };
       // Cuando se conecta se mete en un loop
