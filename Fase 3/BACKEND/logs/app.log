@@ -1299,3 +1299,31 @@
 2024-10-19 14:52:35,299:INFO:Datos obtenidos y guardados desde la API correctamente.
 2024-10-19 14:52:35,299:INFO:Datos obtenidos y guardados desde la API correctamente.
 2024-10-19 14:52:35,348:INFO:127.0.0.1 - - [19/Oct/2024 14:52:35] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:57:02,214:INFO: * Detected change in 'C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\__init__.py', reloading
+2024-10-19 14:57:02,252:INFO: * Restarting with stat
+2024-10-19 14:57:02,978:WARNING: * Debugger is active!
+2024-10-19 14:57:02,978:INFO: * Debugger PIN: 958-996-501
+2024-10-19 14:57:11,029:INFO: * Detected change in 'C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\main.py', reloading
+2024-10-19 14:57:11,067:INFO: * Restarting with stat
+2024-10-19 14:57:11,799:WARNING: * Debugger is active!
+2024-10-19 14:57:11,799:INFO: * Debugger PIN: 958-996-501
+2024-10-19 14:57:13,817:INFO: * Detected change in 'C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\app\\__init__.py', reloading
+2024-10-19 14:57:13,847:INFO: * Restarting with stat
+2024-10-19 14:57:14,576:WARNING: * Debugger is active!
+2024-10-19 14:57:14,576:INFO: * Debugger PIN: 958-996-501
+2024-10-19 14:57:18,610:INFO: * Detected change in 'C:\\Users\\Marcos Josué Cruz\\Documents\\ARQUI2\\ARQUI2B_2S2024_G1\\Fase 3\\BACKEND\\main.py', reloading
+2024-10-19 14:57:18,638:INFO: * Restarting with stat
+2024-10-19 14:57:19,300:WARNING: * Debugger is active!
+2024-10-19 14:57:19,300:INFO: * Debugger PIN: 958-996-501
+2024-10-19 15:04:36,853:INFO:127.0.0.1 - - [19/Oct/2024 15:04:36] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 15:04:37,105:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 15:04:37,105:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 15:05:44,511:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 15:05:44,511:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 15:05:44,698:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 15:05:44,698:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 15:05:44,714:INFO:Archivo JSON abierto correctamente.
+2024-10-19 15:05:44,714:INFO:Archivo JSON abierto correctamente.
+2024-10-19 15:05:44,714:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 15:05:44,714:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 15:05:44,761:INFO:127.0.0.1 - - [19/Oct/2024 15:05:44] "GET /consulta_general HTTP/1.1" 200 -

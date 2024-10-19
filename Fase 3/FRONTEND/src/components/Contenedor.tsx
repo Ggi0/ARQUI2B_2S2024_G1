@@ -7,7 +7,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 import'../styles/container.css';
 import {Historico} from './Historico/Historico';
-import {Actual} from './Actual/Actual';
+import {Actual} from './Actual/Actual'; 
 import { Prediccion } from './Prediccion/Prediccion';
 import {TabIntegrantes} from './Mas/TabIntegrantes';
 import { Parqueo } from './Parqueo/Parqueo';
