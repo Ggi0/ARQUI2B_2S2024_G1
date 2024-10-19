@@ -6,6 +6,8 @@ import json
 import requests
 import calendar
 import time
+# hilos
+from threading import Thread
 
 # DATOS RECIBIDOS DE ARDUINO
 # Sensores
@@ -40,7 +42,8 @@ colecciones = {
 }
 
 # URL BD
-URL_BD = 'http://34.29.61.196:8000/api/data/'
+URL_BD = 'http://35.225.168.189:8000/api/data/'
+URL_BD_CONTADOR = 'http://35.225.168.189:8000/api/incrementar-aperturas/1'
 
 def escribir_a_BD(coleccion, valor):
     time_tuple = time.gmtime()
@@ -50,23 +53,38 @@ def escribir_a_BD(coleccion, valor):
         'sensorValue': valor,
         'timestamp': timestamp
     }
+    
+    def escritura(bd_entry):
+        post_response = requests.post(URL_BD, json=bd_entry)
+        if post_response.status_code == 201:
+           print(f'Escritura a BD exitosa. Response: {post_response.json()}')
+        else:
+           print(f'Escritura a BD fallida. Code: {post_response.status_code}, Response: {post_response.json()}')
 
-    post_response = requests.post(URL_BD, json=new_bd_entry)
-    if post_response.status_code == 201:
-        print(f'Escritura a BD exitosa. Response: {post_response.json()}')
-    else:
-        print(f'Escritura a BD fallida. Code: {post_response.status_code}, Response: {post_response.json()}')
+    thread_bd = Thread(target=escritura, kwargs={'bd_entry': new_bd_entry})
+    thread_bd.start()
+
+
+def aumentar_contador_carros():
+    def aumentar():
+        put_response = requests.put(URL_BD_CONTADOR)
+        if put_response.status_code == 200:
+            print(f'Se suma contador de carros por talanquera. Response: {put_response.json()}')
+        else:
+            print(f'Suma a contador de carros fallida. Code: {put_response.status_code}, Response: {put_response.json()}')
+    thread_db = Thread(target=aumentar)
+    thread_db.start()
 
 
 # MQTT Publisher para enviar los datos de los sensores al broker
 def enviar_datos_mqtt(client):
     datos = {
-        'temperatura': temperatura,
-        'humedad': humedad,
-        'luminosidad': luminosidad,
-        'aire': aire,
-        'ultrasonico': ultrasonico,
-        'estacionamiento': dist_estacionar
+        'temperatura': str(temperatura),
+        'humedad': str(humedad),
+        'luminosidad': str(luminosidad),
+        'aire': str(aire),
+        'ultrasonico': str(ultrasonico),
+        'estacionamiento': str(dist_estacionar)
     }
     
     # Convertir el diccionario a una cadena JSON
@@ -128,6 +146,7 @@ def clasificacion(inicial, valor):
     elif inicial == 'E':
         talanquera_uso = valor
         print(f"Uso de la talanquera: {talanquera_uso}")
+        aumentar_contador_carros()
 
     elif inicial == 'm':
         abrir_talanquera = valor
@@ -207,6 +226,8 @@ try:
 
             else:
                 print("Linea vacia o invalida recibida.")
+
+            time.sleep(2)
 except KeyboardInterrupt:
     print("Interrupcion manual por el usuario")
 
