@@ -21,7 +21,7 @@ def configure_routes(app):
         Ruta que devuelve los datos de las colecciones en formato JSON.
         """
         try:
-            data = base_data.consulta_general(actualizar=False)  # Obtiene datos de la API o archivo local
+            data = base_data.consulta_general(actualizar=True)  # Obtiene datos de la API o archivo local
             return jsonify(data), 200
         except Exception as e:
             # Registra el error en los logs con detalles
