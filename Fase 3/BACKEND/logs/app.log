@@ -952,3 +952,350 @@
 2024-10-19 11:30:57,209:INFO: * Restarting with stat
 2024-10-19 11:30:57,938:WARNING: * Debugger is active!
 2024-10-19 11:30:57,938:INFO: * Debugger PIN: 958-996-501
+2024-10-19 11:31:02,449:INFO:127.0.0.1 - - [19/Oct/2024 11:31:02] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:31:02,709:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:31:02,709:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:31:16,209:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:31:16,209:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:31:16,374:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:31:16,374:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:31:16,396:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:31:16,396:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:31:16,396:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:31:16,396:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:31:16,430:INFO:127.0.0.1 - - [19/Oct/2024 11:31:16] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:34:57,803:INFO:127.0.0.1 - - [19/Oct/2024 11:34:57] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 11:34:58,059:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 11:34:58,059:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 11:34:58,719:INFO:Apretura incrementada con exito
+2024-10-19 11:34:58,719:INFO:127.0.0.1 - - [19/Oct/2024 11:34:58] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 11:41:01,376:INFO:127.0.0.1 - - [19/Oct/2024 11:41:01] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 11:41:01,633:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 11:41:01,633:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 11:41:02,356:INFO:Apretura incrementada con exito
+2024-10-19 11:41:02,356:INFO:127.0.0.1 - - [19/Oct/2024 11:41:02] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 11:41:02,356:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 11:41:02,356:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 11:41:03,599:INFO:Apretura incrementada con exito
+2024-10-19 11:41:03,600:INFO:127.0.0.1 - - [19/Oct/2024 11:41:03] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 11:41:03,908:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 11:41:03,908:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 11:41:05,080:INFO:Apretura incrementada con exito
+2024-10-19 11:41:05,080:INFO:127.0.0.1 - - [19/Oct/2024 11:41:05] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 11:42:45,272:INFO:127.0.0.1 - - [19/Oct/2024 11:42:45] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:42:45,528:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:42:45,528:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:43:13,137:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:43:13,137:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:43:13,369:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:43:13,369:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:43:13,397:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:43:13,397:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:43:13,397:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:43:13,397:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:43:13,438:INFO:127.0.0.1 - - [19/Oct/2024 11:43:13] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:43:42,765:INFO:127.0.0.1 - - [19/Oct/2024 11:43:42] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:43:43,015:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:43:43,015:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:43:49,838:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:43:49,838:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:43:50,033:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:43:50,033:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:43:50,061:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:43:50,061:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:43:50,061:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:43:50,061:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:43:50,102:INFO:127.0.0.1 - - [19/Oct/2024 11:43:50] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:50:05,608:INFO:127.0.0.1 - - [19/Oct/2024 11:50:05] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:50:05,864:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:50:05,864:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:50:17,838:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:50:17,838:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:50:18,080:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:50:18,080:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:50:18,102:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:50:18,102:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:50:18,102:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:50:18,102:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:50:18,157:INFO:127.0.0.1 - - [19/Oct/2024 11:50:18] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:50:18,615:INFO:127.0.0.1 - - [19/Oct/2024 11:50:18] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 11:50:18,921:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:50:18,921:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 11:50:28,735:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:50:28,735:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 11:50:28,930:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:50:28,930:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 11:50:28,951:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:50:28,951:INFO:Archivo JSON abierto correctamente.
+2024-10-19 11:50:28,951:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:50:28,951:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 11:50:28,992:INFO:127.0.0.1 - - [19/Oct/2024 11:50:28] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 12:21:36,390:INFO:127.0.0.1 - - [19/Oct/2024 12:21:36] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 12:21:36,630:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 12:21:36,630:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 12:22:24,758:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 12:22:24,758:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 12:22:24,931:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 12:22:24,931:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 12:22:24,952:INFO:Archivo JSON abierto correctamente.
+2024-10-19 12:22:24,952:INFO:Archivo JSON abierto correctamente.
+2024-10-19 12:22:24,952:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 12:22:24,952:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 12:22:24,985:INFO:127.0.0.1 - - [19/Oct/2024 12:22:24] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 12:31:00,656:INFO:127.0.0.1 - - [19/Oct/2024 12:31:00] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 12:31:00,912:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 12:31:00,912:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 12:31:25,437:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 12:31:25,437:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 12:31:25,638:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 12:31:25,638:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 12:31:25,660:INFO:Archivo JSON abierto correctamente.
+2024-10-19 12:31:25,660:INFO:Archivo JSON abierto correctamente.
+2024-10-19 12:31:25,660:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 12:31:25,660:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 12:31:25,701:INFO:127.0.0.1 - - [19/Oct/2024 12:31:25] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 12:44:17,453:INFO:127.0.0.1 - - [19/Oct/2024 12:44:17] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 12:44:17,714:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 12:44:17,714:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 12:44:24,829:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 12:44:24,829:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 12:44:25,031:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 12:44:25,031:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 12:44:25,052:INFO:Archivo JSON abierto correctamente.
+2024-10-19 12:44:25,052:INFO:Archivo JSON abierto correctamente.
+2024-10-19 12:44:25,052:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 12:44:25,052:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 12:44:25,094:INFO:127.0.0.1 - - [19/Oct/2024 12:44:25] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 12:47:21,844:INFO:127.0.0.1 - - [19/Oct/2024 12:47:21] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 12:47:22,101:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 12:47:22,101:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 12:47:22,901:INFO:Apretura incrementada con exito
+2024-10-19 12:47:22,901:INFO:127.0.0.1 - - [19/Oct/2024 12:47:22] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 12:49:01,660:INFO:127.0.0.1 - - [19/Oct/2024 12:49:01] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 12:49:01,914:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 12:49:01,914:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 12:49:02,585:INFO:Apretura incrementada con exito
+2024-10-19 12:49:02,585:INFO:127.0.0.1 - - [19/Oct/2024 12:49:02] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 12:49:22,422:INFO:127.0.0.1 - - [19/Oct/2024 12:49:22] "OPTIONS /consulta_usuario/arqui2/4320 HTTP/1.1" 200 -
+2024-10-19 12:49:22,743:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 12:49:22,743:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 12:49:23,589:INFO:Apretura incrementada con exito
+2024-10-19 12:49:23,589:INFO:127.0.0.1 - - [19/Oct/2024 12:49:23] "GET /consulta_usuario/arqui2/4320 HTTP/1.1" 200 -
+2024-10-19 12:56:44,015:INFO:127.0.0.1 - - [19/Oct/2024 12:56:44] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 12:56:44,258:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 12:56:44,258:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 12:56:49,832:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 12:56:49,832:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 12:56:50,033:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 12:56:50,033:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 12:56:50,061:INFO:Archivo JSON abierto correctamente.
+2024-10-19 12:56:50,061:INFO:Archivo JSON abierto correctamente.
+2024-10-19 12:56:50,061:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 12:56:50,061:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 12:56:50,103:INFO:127.0.0.1 - - [19/Oct/2024 12:56:50] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 13:00:03,821:INFO:127.0.0.1 - - [19/Oct/2024 13:00:03] "OPTIONS /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 13:00:04,085:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 13:00:04,085:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 13:00:05,064:INFO:Consulta realizada con exito
+2024-10-19 13:00:05,064:INFO:127.0.0.1 - - [19/Oct/2024 13:00:05] "GET /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 13:00:12,974:INFO:127.0.0.1 - - [19/Oct/2024 13:00:12] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 13:00:13,281:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 13:00:13,281:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 13:00:17,849:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 13:00:17,849:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 13:00:18,042:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 13:00:18,042:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 13:00:18,063:INFO:Archivo JSON abierto correctamente.
+2024-10-19 13:00:18,063:INFO:Archivo JSON abierto correctamente.
+2024-10-19 13:00:18,063:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 13:00:18,063:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 13:00:18,105:INFO:127.0.0.1 - - [19/Oct/2024 13:00:18] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 13:00:23,512:INFO:127.0.0.1 - - [19/Oct/2024 13:00:23] "OPTIONS /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 13:00:23,825:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 13:00:23,825:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 13:00:24,893:INFO:Consulta realizada con exito
+2024-10-19 13:00:24,893:INFO:127.0.0.1 - - [19/Oct/2024 13:00:24] "GET /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 13:15:35,860:INFO:127.0.0.1 - - [19/Oct/2024 13:15:35] "OPTIONS /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 13:15:36,110:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 13:15:36,110:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 13:15:37,450:INFO:Consulta realizada con exito
+2024-10-19 13:15:37,450:INFO:127.0.0.1 - - [19/Oct/2024 13:15:37] "GET /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:28:44,464:INFO:127.0.0.1 - - [19/Oct/2024 14:28:44] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:28:44,721:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:28:44,721:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:28:44,721:ERROR:Error en la solicitud a la API: HTTPConnectionPool(host='35.225.168.189', port=8000): Max retries exceeded with url: /api/colecciones/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000152D59BC140>: Failed to establish a new connection: [WinError 10065] Se ha intentado una operación de socket en un host no accesible'))
+2024-10-19 14:28:44,721:ERROR:Error en la solicitud a la API: HTTPConnectionPool(host='35.225.168.189', port=8000): Max retries exceeded with url: /api/colecciones/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000152D59BC140>: Failed to establish a new connection: [WinError 10065] Se ha intentado una operación de socket en un host no accesible'))
+2024-10-19 14:28:44,721:ERROR:Error en obtener_colecciones: HTTPConnectionPool(host='35.225.168.189', port=8000): Max retries exceeded with url: /api/colecciones/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000152D59BC140>: Failed to establish a new connection: [WinError 10065] Se ha intentado una operación de socket en un host no accesible'))
+2024-10-19 14:28:44,721:INFO:127.0.0.1 - - [19/Oct/2024 14:28:44] "[35m[1mGET /consulta_general HTTP/1.1[0m" 500 -
+2024-10-19 14:28:59,994:INFO:127.0.0.1 - - [19/Oct/2024 14:28:59] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:29:00,299:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:29:00,299:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:29:00,299:ERROR:Error en la solicitud a la API: HTTPConnectionPool(host='35.225.168.189', port=8000): Max retries exceeded with url: /api/colecciones/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000152D59BDE50>: Failed to establish a new connection: [WinError 10065] Se ha intentado una operación de socket en un host no accesible'))
+2024-10-19 14:29:00,299:ERROR:Error en la solicitud a la API: HTTPConnectionPool(host='35.225.168.189', port=8000): Max retries exceeded with url: /api/colecciones/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000152D59BDE50>: Failed to establish a new connection: [WinError 10065] Se ha intentado una operación de socket en un host no accesible'))
+2024-10-19 14:29:00,299:ERROR:Error en obtener_colecciones: HTTPConnectionPool(host='35.225.168.189', port=8000): Max retries exceeded with url: /api/colecciones/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000152D59BDE50>: Failed to establish a new connection: [WinError 10065] Se ha intentado una operación de socket en un host no accesible'))
+2024-10-19 14:29:00,299:INFO:127.0.0.1 - - [19/Oct/2024 14:29:00] "[35m[1mGET /consulta_general HTTP/1.1[0m" 500 -
+2024-10-19 14:29:12,093:INFO:127.0.0.1 - - [19/Oct/2024 14:29:12] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:29:12,340:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:29:12,340:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:29:18,671:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:29:18,671:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:29:18,909:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:29:18,909:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:29:18,925:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:29:18,925:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:29:18,925:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:29:18,925:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:29:18,972:INFO:127.0.0.1 - - [19/Oct/2024 14:29:18] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:30:51,321:INFO:127.0.0.1 - - [19/Oct/2024 14:30:51] "OPTIONS /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:30:51,576:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:30:51,576:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:30:54,013:INFO:Consulta realizada con exito
+2024-10-19 14:30:54,014:INFO:127.0.0.1 - - [19/Oct/2024 14:30:54] "GET /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:31:13,005:INFO:127.0.0.1 - - [19/Oct/2024 14:31:13] "OPTIONS /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:31:13,323:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:31:13,323:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:31:14,003:INFO:Consulta realizada con exito
+2024-10-19 14:31:14,003:INFO:127.0.0.1 - - [19/Oct/2024 14:31:14] "GET /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:31:17,643:INFO:127.0.0.1 - - [19/Oct/2024 14:31:17] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 14:31:17,956:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 14:31:17,956:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 14:31:18,730:INFO:Apretura incrementada con exito
+2024-10-19 14:31:18,730:INFO:127.0.0.1 - - [19/Oct/2024 14:31:18] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 14:31:22,694:INFO:127.0.0.1 - - [19/Oct/2024 14:31:22] "OPTIONS /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:31:22,999:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:31:22,999:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:31:23,707:INFO:Consulta realizada con exito
+2024-10-19 14:31:23,707:INFO:127.0.0.1 - - [19/Oct/2024 14:31:23] "GET /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:31:29,670:INFO:127.0.0.1 - - [19/Oct/2024 14:31:29] "OPTIONS /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:31:29,975:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:31:29,975:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:31:30,614:INFO:Consulta realizada con exito
+2024-10-19 14:31:30,614:INFO:127.0.0.1 - - [19/Oct/2024 14:31:30] "GET /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:32:48,400:INFO:127.0.0.1 - - [19/Oct/2024 14:32:48] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:32:48,657:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:32:48,657:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:32:52,877:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:32:52,877:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:32:53,113:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:32:53,113:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:32:53,148:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:32:53,148:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:32:53,148:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:32:53,148:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:32:53,197:INFO:127.0.0.1 - - [19/Oct/2024 14:32:53] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:33:20,669:INFO:127.0.0.1 - - [19/Oct/2024 14:33:20] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:33:20,974:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:33:20,974:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:33:25,190:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:33:25,190:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:33:25,421:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:33:25,421:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:33:25,445:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:33:25,445:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:33:25,445:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:33:25,445:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:33:25,486:INFO:127.0.0.1 - - [19/Oct/2024 14:33:25] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:34:17,427:INFO:127.0.0.1 - - [19/Oct/2024 14:34:17] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:34:17,737:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:34:17,737:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:34:25,828:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:34:25,828:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:34:26,038:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:34:26,038:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:34:26,063:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:34:26,063:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:34:26,063:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:34:26,063:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:34:26,111:INFO:127.0.0.1 - - [19/Oct/2024 14:34:26] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:39:33,309:INFO:127.0.0.1 - - [19/Oct/2024 14:39:33] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:39:33,566:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:39:33,566:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:39:40,134:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:39:40,134:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:39:40,338:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:39:40,338:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:39:40,353:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:39:40,353:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:39:40,353:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:39:40,353:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:39:40,400:INFO:127.0.0.1 - - [19/Oct/2024 14:39:40] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:39:54,432:INFO:127.0.0.1 - - [19/Oct/2024 14:39:54] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:39:54,740:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:39:54,740:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:40:01,107:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:40:01,107:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:40:01,300:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:40:01,300:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:40:01,321:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:40:01,321:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:40:01,321:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:40:01,321:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:40:01,352:INFO:127.0.0.1 - - [19/Oct/2024 14:40:01] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:40:30,644:INFO:127.0.0.1 - - [19/Oct/2024 14:40:30] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:40:30,949:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:40:30,949:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:40:36,488:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:40:36,488:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:40:36,696:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:40:36,696:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:40:36,717:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:40:36,717:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:40:36,717:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:40:36,717:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:40:36,752:INFO:127.0.0.1 - - [19/Oct/2024 14:40:36] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:43:45,065:INFO:127.0.0.1 - - [19/Oct/2024 14:43:45] "OPTIONS /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:43:45,320:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:43:45,320:INFO:Consultando parqueo: http://35.225.168.189:8000/api/incrementar-aperturas
+2024-10-19 14:43:46,223:INFO:Consulta realizada con exito
+2024-10-19 14:43:46,223:INFO:127.0.0.1 - - [19/Oct/2024 14:43:46] "GET /consulta_cant_talanquera HTTP/1.1" 200 -
+2024-10-19 14:45:15,283:INFO:127.0.0.1 - - [19/Oct/2024 14:45:15] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 14:45:15,539:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 14:45:15,539:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 14:45:16,240:INFO:Apretura incrementada con exito
+2024-10-19 14:45:16,240:INFO:127.0.0.1 - - [19/Oct/2024 14:45:16] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 14:45:41,717:INFO:127.0.0.1 - - [19/Oct/2024 14:45:41] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 14:45:42,030:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 14:45:42,030:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 14:45:43,052:INFO:Apretura incrementada con exito
+2024-10-19 14:45:43,052:INFO:127.0.0.1 - - [19/Oct/2024 14:45:43] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 14:46:59,685:INFO:127.0.0.1 - - [19/Oct/2024 14:46:59] "OPTIONS /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 14:46:59,935:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 14:46:59,935:INFO:Consultando usuario: http://35.225.168.189:8000/api/validar-usuario
+2024-10-19 14:47:00,976:INFO:Apretura incrementada con exito
+2024-10-19 14:47:00,976:INFO:127.0.0.1 - - [19/Oct/2024 14:47:00] "GET /consulta_usuario/arqui2/4321 HTTP/1.1" 200 -
+2024-10-19 14:47:52,687:INFO:127.0.0.1 - - [19/Oct/2024 14:47:52] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:47:52,990:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:47:52,990:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:48:00,480:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:48:00,480:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:48:00,717:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:48:00,717:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:48:00,733:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:48:00,733:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:48:00,733:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:48:00,733:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:48:00,776:INFO:127.0.0.1 - - [19/Oct/2024 14:48:00] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:48:23,727:INFO:127.0.0.1 - - [19/Oct/2024 14:48:23] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:48:24,030:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:48:24,030:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:48:30,507:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:48:30,507:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:48:30,728:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:48:30,728:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:48:30,749:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:48:30,749:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:48:30,749:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:48:30,749:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:48:30,798:INFO:127.0.0.1 - - [19/Oct/2024 14:48:30] "GET /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:52:26,754:INFO:127.0.0.1 - - [19/Oct/2024 14:52:26] "OPTIONS /consulta_general HTTP/1.1" 200 -
+2024-10-19 14:52:27,012:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:52:27,012:INFO:Haciendo solicitud a la API: http://35.225.168.189:8000/api/colecciones/
+2024-10-19 14:52:35,055:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:52:35,055:INFO:Datos ordenados por fecha correctamente.
+2024-10-19 14:52:35,271:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:52:35,271:INFO:Datos escritos correctamente en 'database.json'.
+2024-10-19 14:52:35,299:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:52:35,299:INFO:Archivo JSON abierto correctamente.
+2024-10-19 14:52:35,299:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:52:35,299:INFO:Datos obtenidos y guardados desde la API correctamente.
+2024-10-19 14:52:35,348:INFO:127.0.0.1 - - [19/Oct/2024 14:52:35] "GET /consulta_general HTTP/1.1" 200 -

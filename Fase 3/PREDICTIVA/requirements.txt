@@ -1,0 +1,11 @@
+# requirements.txt
+django
+djangorestframework
+dj-database-url
+python-decouple
+psycopg2-binary
+matplotlib
+tensorflow
+scikit-learn
+numpy
+keras
