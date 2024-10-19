@@ -21,7 +21,7 @@ def configure_routes(app):
         Ruta que devuelve los datos de las colecciones en formato JSON.
         """
         try:
-            data = base_data.consulta_general()  # Obtiene datos de la API o archivo local
+            data = base_data.consulta_general(actualizar=False)  # Obtiene datos de la API o archivo local
             return jsonify(data), 200
         except Exception as e:
             # Registra el error en los logs con detalles
@@ -40,7 +40,7 @@ def configure_routes(app):
             return jsonify({"error": str(e)}), 500
         
     @app.route('/consulta_prediccion/<int:fecha_timestamp>', methods=['GET'])
-    def obtener_predicciones(fecha_timestamp):
+    def obtener_predicciones(fecha_timestamp): 
         """
         Ruta que obtiene predicciones basado en el timestamp pasado como parámetro.
         """
@@ -66,3 +66,23 @@ def configure_routes(app):
         except Exception as e:
             logger.error(f"Error al obtener predicciones: {str(e)}")
             return jsonify({"error": str(e)}), 500
+
+    @app.route('/consulta_usuario/<string:user>/<int:password>', methods=['GET'])
+    def consulta_usuario(user, password): 
+        try:
+            data_respuesta, mensaje = base_data.consulta_usuario(user, password)
+            logger.info("Apretura incrementada con exito")
+            return jsonify({"ok": data_respuesta, 'mensaje': mensaje}), 200
+        except Exception as e:
+            logger.error(f"Error al incrementar aperturas: {str(e)}")
+            return jsonify({"error": str(e)}), 500
+        
+    @app.route('/consulta_cant_talanquera', methods=['GET'])
+    def consulta_cant_talanquera(): 
+        try:
+            cantidad_ingreso = base_data.consulta_parqueo()
+            logger.info("Consulta realizada con exito")
+            return jsonify({"ok": True, 'cantidad': cantidad_ingreso}), 200
+        except Exception as e:
+            logger.error(f"Error al realizar consulta: {str(e)}")
+            return jsonify({"ok": False, 'cantidad': 0}), 500

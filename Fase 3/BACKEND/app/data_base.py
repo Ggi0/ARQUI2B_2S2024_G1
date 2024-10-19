@@ -20,7 +20,9 @@ class BaseData:
     def __init__(self):
         # Diccionario que va a funcionar como base de datos
         self.diccionario = []
-        self.base_url = "http://34.29.61.196:8000/api/colecciones/"  # URL de la API
+        self.base_url    = "http://35.225.168.189:8000/api/colecciones/"  # URL de la API
+        self.url_parqueo = "http://35.225.168.189:8000/api/incrementar-aperturas"  
+        self.url_usuario = "http://35.225.168.189:8000/api/validar-usuario"  
 
     def _abrir_json(self) -> None:
         try:
@@ -117,6 +119,7 @@ class BaseData:
                             self.diccionario = response.json()
                             self._ordenar_por_fecha(self.diccionario)  # Ordenar por fecha
                             self._escribir_json()  # Guardar datos en archivo
+                            self._abrir_json()
                             logger.info("Datos obtenidos y guardados desde la API correctamente.")
                             return self.diccionario
                         except json.JSONDecodeError as e:
@@ -135,3 +138,16 @@ class BaseData:
             logger.info("Leyendo datos desde archivo local 'database.json'.")
             self._abrir_json()  # Leer datos desde archivo local
             return self.diccionario
+        
+    def consulta_usuario(self, usuario, password):
+        logger.info(f"Consultando usuario: {self.url_usuario}")
+        response = requests.post(self.url_usuario, data={'user': usuario, 'password': password})
+        resultado, mensaje = response.json()['ok'], response.json()['message']
+        return(resultado, mensaje)
+
+    def consulta_parqueo(self):
+        logger.info(f"Consultando parqueo: {self.url_parqueo}")
+        response = requests.get(self.url_parqueo + "/1")
+        cantidad = response.json()['aperturas']
+        return(cantidad)
+                
